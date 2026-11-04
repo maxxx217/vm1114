@@ -1,0 +1,1050 @@
+/* ==========================================================================
+   台北科教館《十五年的約定》互動教案樣式表
+   符合 WCAG 2.1 AA 無障礙標準、觸控螢幕優化、科教館專業展覽視覺體系
+   ========================================================================== */
+
+:root {
+  /* 科教館生態與生命科學主題色系 */
+  --color-primary: #1e5f48;         /* 深松綠：代表生命、專業、守護 */
+  --color-primary-hover: #154534;
+  --color-primary-light: #e8f3ef;
+  
+  --color-accent: #d97706;          /* 暖琥珀橙：警示、引導與活力 */
+  --color-accent-hover: #b45309;
+  --color-accent-light: #fef3c7;
+
+  --color-bg-main: #f8faf9;         /* 柔和護眼淺灰綠底色 */
+  --color-surface: #ffffff;        /* 卡片白底 */
+  --color-surface-soft: #f1f5f3;
+
+  --color-text-main: #1f2937;       /* 烏黑文字：保證對比度 > 7:1 */
+  --color-text-muted: #4b5563;      /* 次級灰字：保證對比度 > 4.5:1 */
+  --color-border: #d1d5db;
+
+  --color-success: #15803d;
+  --color-success-bg: #dcfce7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fee2e2;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 12px 24px -4px rgba(30, 95, 72, 0.12);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 頂部科教館導覽列 */
+.museum-header {
+  background-color: var(--color-surface);
+  border-bottom: 2px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.museum-badge {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.exhibition-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary-hover);
+  letter-spacing: -0.01em;
+}
+
+.header-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.tag-theme {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.tag-target {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* 主要容器 */
+.main-container {
+  max-width: 960px;
+  width: 100%;
+  margin: 1.5rem auto;
+  padding: 0 1rem 3rem 1rem;
+  flex: 1;
+}
+
+.screen-view {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.screen-view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 階段 1：物種選擇畫面 */
+.intro-banner {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.player-name-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  max-width: 440px;
+  margin: 0 auto 1.75rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.player-name-box label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.player-name-box input {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  width: 140px;
+  text-align: center;
+}
+
+.player-name-box input:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.loading-state, .error-card {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.retry-btn {
+  margin-top: 0.75rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pet-select-card {
+  background-color: var(--color-surface);
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.pet-select-card:hover, .pet-select-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.pet-icon-circle {
+  font-size: 3.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.pet-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.pet-lifespan-pill {
+  display: inline-block;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.pet-card-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  text-align: left;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.pet-select-btn {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  min-height: 48px;
+}
+
+.pet-select-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* 階段 2：15 年遊戲舞台 */
+.game-top-bar {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.pet-profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pet-avatar-large {
+  font-size: 2.2rem;
+  background-color: var(--color-primary-light);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.pet-title-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.life-year-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.timeline-container {
+  flex: 1;
+  min-width: 240px;
+}
+
+.timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-bar-bg {
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.timeline-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+/* 三維儀表盤 */
+.meters-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.meter-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.meter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.meter-icon {
+  margin-right: 0.25rem;
+}
+
+.meter-label {
+  flex: 1;
+  color: var(--color-text-muted);
+}
+
+.meter-val {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-main);
+}
+
+.meter-track {
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fill-money { background-color: #d97706; }
+.fill-time { background-color: #2563eb; }
+.fill-happiness { background-color: #e11d48; }
+
+/* 核心 3D 翻轉卡牌結構 */
+.card-scene {
+  perspective: 1400px;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  min-height: 480px;
+}
+
+.flipper-card {
+  width: 100%;
+  min-height: 480px;
+  position: relative;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flipper-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  width: 100%;
+  min-height: 480px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-card);
+  border: 2px solid var(--color-primary-light);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 卡牌正面 */
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.card-top-tag {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.event-illustration {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.event-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.event-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.choice-instruction {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.choice-btn {
+  background-color: var(--color-surface);
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  transition: all 0.2s ease;
+  min-height: 54px;
+}
+
+.choice-btn:hover:not(:disabled), .choice-btn:focus-visible:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  transform: translateX(4px);
+  outline: none;
+}
+
+.choice-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.opt-key {
+  background-color: #e5e7eb;
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  font-weight: 800;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.choice-btn:hover:not(:disabled) .opt-key {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* 卡牌背面 */
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, #fafffd 0%, #ffffff 100%);
+  border-color: #cbd5e1;
+}
+
+.back-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.result-badge {
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.badge-warning {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.back-year-echo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.vet-insight-box {
+  background-color: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.vet-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #065f46;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.vet-icon {
+  font-size: 1.25rem;
+}
+
+.vet-text {
+  font-size: 0.95rem;
+  color: #064e3b;
+  line-height: 1.6;
+}
+
+.delta-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.delta-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.delta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.delta-tag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.tag-money { background: #fef3c7; color: #92400e; }
+.tag-time { background: #dbeafe; color: #1e40af; }
+.tag-happy { background: #ffe4e6; color: #9f1239; }
+
+.story-feedback {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.next-event-btn {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  min-height: 52px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.next-event-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* 階段 3：結算榮譽證書畫面 */
+.cert-outer-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  background: #fdfbf7;
+  border: 6px double #b45309;
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.cert-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(180, 83, 9, 0.04);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cert-header {
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.cert-gov-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.cert-main-heading {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #78350f;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.cert-id {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-family: monospace;
+}
+
+.cert-recipient-line {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cert-highlight-name {
+  color: var(--color-primary);
+  font-size: 1.35rem;
+  border-bottom: 2px solid var(--color-primary);
+  padding: 0 0.25rem;
+}
+
+.cert-highlight-pet {
+  color: var(--color-accent);
+  font-size: 1.35rem;
+}
+
+.cert-stats-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.radar-box {
+  text-align: center;
+}
+
+.radar-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.cert-eval-box {
+  text-align: center;
+  max-width: 320px;
+}
+
+.grade-badge-huge {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #b45309;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.eval-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.eval-tag {
+  display: inline-block;
+  background-color: #fef3c7;
+  color: #b45309;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.cert-comment-text {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.cert-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background-color: #f9fafb;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.meta-val {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.cert-pledge-quote {
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.95rem;
+  color: #92400e;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.quote-mark {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #d97706;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.cert-seal {
+  width: 72px;
+  height: 72px;
+  border: 3px dashed #b45309;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fef3c7;
+}
+
+.seal-inner {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #92400e;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.cert-date-sign {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.cert-action-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cert-action {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-height: 48px;
+  border: none;
+  transition: transform 0.15s ease;
+}
+
+.btn-print {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-print:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-restart {
+  background-color: #ffffff;
+  color: var(--color-text-main);
+  border: 1.5px solid var(--color-border);
+}
+
+.btn-restart:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* 🚨 獸醫緊急救援彈窗 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.rescue-dialog {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  border: 3px solid #ef4444;
+}
+
+.rescue-icon-alarm {
+  font-size: 3.5rem;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+.rescue-heading {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #b91c1c;
+  margin-bottom: 0.5rem;
+}
+
+.rescue-mascot {
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.rescue-body {
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.rescue-takeaway {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  color: #991b1b;
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.rescue-confirm-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  width: 100%;
+  min-height: 50px;
+}
+
+.rescue-confirm-btn:hover {
+  background-color: #dc2626;
+}
+
+/* 響應式佈局 (Mobile & Tablet) */
+@media (max-width: 640px) {
+  .meters-dashboard {
+    grid-template-columns: 1fr;
+  }
+  .card-face {
+    padding: 1.25rem 1.5rem;
+  }
+  .event-title {
+    font-size: 1.2rem;
+  }
+  .cert-stats-layout {
+    flex-direction: column;
+  }
+}
