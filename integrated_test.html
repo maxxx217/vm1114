@@ -1,0 +1,3856 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>十五年的約定：飼主責任與長期承諾 | 國立臺灣大學獸醫學系 × 國立臺灣科學教育館</title>
+  <style>
+    /* ==========================================================================
+       國立臺灣大學獸醫專業學院衛教計畫 ✕ 國立臺灣科學教育館
+       【風格 B：法式暖陽奶油麵包風】(Warm Butter Bakery Minimal)
+       32px 超大蓬鬆圓角、焦糖拿鐵褐、濃郁奶油黃、治癒抹茶綠、純淨溫暖
+       ========================================================================== */
+    :root {
+      --color-primary: #78350f;         /* 焦糖拿鐵褐 */
+      --color-primary-hover: #451a03;
+      --color-primary-light: #fef3c7;   /* 濃郁奶油黃 */
+      --color-warm-wood: #92400e;       /* 烘焙暖棕 */
+      --color-accent: #d97706;          /* 陽光琥珀可頌橘 */
+      --color-accent-hover: #b45309;
+      --color-accent-light: #fffbeb;
+      --color-matcha: #15803d;          /* 治癒抹茶綠 */
+      --color-matcha-light: #dcfce7;
+      --color-correct: #16a34a;         /* ⭕ 抹茶草本綠 */
+      --color-wrong: #dc2626;           /* ❌ 莓果紅 */
+      --color-fatal: #991b1b;           /* 🚨 警示深紅 */
+      --color-bg-main: #fefbf3;         /* 卡士達暖奶油米白底色 */
+      --color-surface: #ffffff;
+      --color-text-main: #292524;       /* 溫暖深炭咖 */
+      --color-text-muted: #57534e;
+      --color-border: #fde68a;          /* 柔暖蛋黃邊框 */
+
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 32px;                /* 32px 超大蓬鬆圓角 */
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 4px 10px rgba(120, 53, 15, 0.05);
+      --shadow-md: 0 10px 24px -4px rgba(120, 53, 15, 0.1);
+      --shadow-lg: 0 20px 42px -6px rgba(120, 53, 15, 0.14);
+      --shadow-fatal: 0 18px 36px -6px rgba(185, 28, 28, 0.2);
+      
+      --font-friendly: "PingFang TC", "Noto Sans TC", "Hiragino Sans GB", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-friendly);
+      background-color: var(--color-bg-main);
+      /* 全景溫潤奶油小動物圖騰：爪印、骨頭、小魚、胡蘿蔔、愛心 */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23b45309' fill-opacity='0.038'%3E%3Ccircle cx='28' cy='22' r='4'/%3E%3Ccircle cx='40' cy='18' r='4.5'/%3E%3Ccircle cx='52' cy='22' r='4'/%3E%3Ccircle cx='20' cy='32' r='3.5'/%3E%3Cpath d='M40,28 C30,28 26,35 28,43 C31,51 49,51 51,43 C53,35 50,28 40,28 Z'/%3E%3Cpath d='M95,25 C92,23 88,24 87,27 C85,24 81,24 79,26 C76,29 78,32 80,33 L104,47 C107,48 111,47 113,44 C115,42 114,38 111,37 C113,36 114,32 112,30 C109,28 106,29 105,32 L95,25 Z' transform='scale(0.7) translate(30, 0)'/%3E%3Cpath d='M25,95 C37,89 49,95 55,101 C49,107 37,113 25,107 C19,111 13,115 10,116 L13,101 L10,87 C13,88 19,92 25,95 Z' transform='scale(0.65) translate(8, 38)'/%3E%3Cpath d='M100,95 Q108,105 102,122 Q95,112 92,97 Z'/%3E%3Ccircle cx='104' cy='92' r='2'/%3E%3Ccircle cx='105' cy='78' r='3.5'/%3E%3Ccircle cx='116' cy='75' r='4'/%3E%3Ccircle cx='126' cy='78' r='3.5'/%3E%3Cpath d='M116,83 C107,83 103,89 105,96 C108,103 124,103 126,96 C128,89 125,83 116,83 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      color: var(--color-text-main);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* 頂部奶油法式質感導航 */
+    .museum-header {
+      background-color: rgba(254, 251, 243, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #fde68a;
+      padding: 0.85rem 1.25rem;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-content {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-ntuvet {
+      background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 6px rgba(120, 53, 15, 0.25);
+      letter-spacing: 0.03em;
+    }
+
+    .badge-museum {
+      background: #fef3c7;
+      color: #78350f;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 0.32rem 0.8rem;
+      border-radius: var(--radius-full);
+      border: 1.5px solid #fde68a;
+    }
+
+    .header-tagline {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: var(--color-warm-wood);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* 頁面專屬動物彩蛋（每頁僅 2 隻、位置種類不重複、純 Emoji 無字樣、不遮擋閱讀） */
+    /* 專屬空白處彩蛋容器（每頁僅保留 1 隻，位於卡片下方留白處，絕不遮擋任何文字與交互） */
+    .easter-safe-zone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding: 0.5rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .easter-pet {
+      font-size: 2.6rem;
+      cursor: pointer;
+      user-select: none;
+      filter: drop-shadow(0 4px 10px rgba(120, 53, 15, 0.15));
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: gentleDrift 4s ease-in-out infinite alternate;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .easter-pet:hover {
+      transform: scale(1.3) rotate(8deg);
+    }
+
+    .easter-pet:active {
+      transform: scale(0.9) rotate(-8deg);
+    }
+
+    .easter-pet.bounce {
+      animation: jellyBounce 0.6s ease-out;
+    }
+
+    @keyframes gentleDrift {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    @keyframes jellyBounce {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.45) rotate(-15deg); }
+      50% { transform: scale(0.85) rotate(10deg); }
+      70% { transform: scale(1.15) rotate(-5deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
+    /* 主內容容器 */
+    .main-container {
+      flex: 1;
+      max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .screen-view {
+      display: none;
+      position: relative;
+    }
+    .screen-view.active {
+      display: block;
+      animation: popFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popFade {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ==========================================================================
+       第 1 幕：重構歡迎首頁 (法式奶油風格 + 32px 蓬鬆圓角 + 漸顯滑入)
+       ========================================================================== */
+    .welcome-showcase {
+      text-align: center;
+      padding: 2.25rem 1.25rem;
+      max-width: 660px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-authority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #fef3c7;
+      color: #78350f;
+      border: 2px solid #fde68a;
+      padding: 0.75rem 1.85rem;
+      border-radius: var(--radius-full);
+      font-size: 1.22rem;
+      font-weight: 950;
+      box-shadow: 0 4px 12px rgba(120, 53, 15, 0.08);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-authority-icon {
+      font-size: 1.45rem;
+    }
+
+    .hero-main-title {
+      font-size: 2.65rem;
+      font-weight: 950;
+      color: #78350f;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-exhibition-tag {
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #92400e;
+      background: #fffbeb;
+      padding: 0.4rem 1.35rem;
+      border-radius: var(--radius-full);
+      border: 1.5px solid #fde68a;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-fade-quote {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #b45309;
+      line-height: 1.6;
+      margin-bottom: 2.35rem;
+      opacity: 0;
+      animation: fadeInUpQuote 1s 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-fade-quote > span {
+      display: block;
+    }
+
+    .hero-fade-quote .sub-quote {
+      color: #92400e;
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-top: 0.35rem;
+    }
+
+    @keyframes fadeInUpQuote {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .student-entry-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.6rem;
+      box-shadow: var(--shadow-md);
+      border: 3px solid #fde68a;
+      max-width: 460px;
+      margin: 0 auto 2.35rem auto;
+    }
+
+    .student-entry-label {
+      font-size: 1.1rem;
+      font-weight: 950;
+      color: var(--color-warm-wood);
+      margin-bottom: 0.95rem;
+      display: block;
+    }
+
+    .name-input-modern {
+      font-size: 1.4rem;
+      font-weight: 950;
+      padding: 0.9rem 1.35rem;
+      border: 3px solid #d97706;
+      border-radius: var(--radius-md);
+      color: #78350f;
+      background-color: #fffbeb;
+      width: 100%;
+      max-width: 290px;
+      text-align: center;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .name-input-modern:focus {
+      border-color: #78350f;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.25);
+    }
+
+    .btn-hero-journey {
+      background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+      color: #ffffff;
+      font-size: 1.48rem;
+      font-weight: 950;
+      border: none;
+      border-radius: var(--radius-full);
+      padding: 1.2rem 3.5rem;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #9a3412, 0 16px 26px rgba(217, 119, 6, 0.3);
+      transition: all 0.15s ease;
+      min-height: 74px;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-hero-journey:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #9a3412, 0 20px 30px rgba(217, 119, 6, 0.35);
+    }
+
+    .btn-hero-journey:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #9a3412;
+    }
+
+    /* ==========================================================================
+       第 2 幕：動物夥伴卡片牆 (Pet Selection Screen)
+       ========================================================================== */
+    .selection-header {
+      text-align: center;
+      margin-bottom: 1.85rem;
+    }
+
+    .selection-title {
+      font-size: 1.8rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-bottom: 0.4rem;
+    }
+
+    .selection-subtitle {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--color-warm-wood);
+    }
+
+    .pets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pet-card {
+      background-color: var(--color-surface);
+      border: 3.5px solid #fde68a;
+      border-radius: var(--radius-lg);
+      padding: 1.85rem 1.35rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pet-card:hover {
+      border-color: #d97706;
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pet-card-avatar {
+      font-size: 4.8rem;
+      margin-bottom: 0.4rem;
+      transition: transform 0.2s ease;
+    }
+
+    .pet-card:hover .pet-card-avatar {
+      transform: scale(1.15) rotate(6deg);
+    }
+
+    .pet-card-name {
+      font-size: 1.5rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-bottom: 0.45rem;
+    }
+
+    .pet-card-pill {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 900;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+      background-color: #fef3c7;
+      color: #92400e;
+      border: 1.5px solid #fde68a;
+    }
+
+    .pet-btn-pick {
+      margin-top: 1.35rem;
+      background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 950;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 0 #9a3412;
+      width: 100%;
+      transition: all 0.15s ease;
+    }
+
+    .pet-btn-pick:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #9a3412;
+    }
+
+    /* ==========================================================================
+       第 3 幕：生命考驗答題室 (守護愛心生命條 + 扣心碎裂動畫)
+       ========================================================================== */
+    .game-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.35rem;
+      background: #ffffff;
+      padding: 0.85rem 1.35rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 3px solid #fde68a;
+    }
+
+    .btn-back-home {
+      background: #fef3c7;
+      border: 2px solid #fde68a;
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 1.1rem;
+      font-size: 1.05rem;
+      font-weight: 950;
+      color: #78350f;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-back-home:hover {
+      background: #fde68a;
+    }
+
+    .pet-status-pill {
+      font-size: 1.15rem;
+      font-weight: 950;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: #78350f;
+    }
+
+    /* 守護愛心生命條 */
+    .hearts-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      position: relative;
+      background: #fff1f2;
+      border: 2.5px solid #fecdd3;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+    }
+
+    .heart-item {
+      font-size: 1.65rem;
+      display: inline-block;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center;
+      line-height: 1;
+    }
+
+    .heart-item.active {
+      filter: drop-shadow(0 2px 5px rgba(220, 38, 38, 0.45));
+    }
+
+    .heart-item.lost {
+      opacity: 0.35;
+      filter: grayscale(100%);
+      transform: scale(0.85);
+    }
+
+    .heart-item.breaking {
+      animation: heartShatter 0.85s forwards ease-out;
+    }
+
+    @keyframes heartShatter {
+      0% { transform: scale(1) rotate(0); filter: drop-shadow(0 0 0 transparent); }
+      25% { transform: scale(2) rotate(-22deg); filter: drop-shadow(0 0 16px #dc2626); }
+      50% { transform: scale(1.6) rotate(16deg); }
+      75% { transform: scale(1.1) translateY(8px); opacity: 0.8; }
+      100% { transform: scale(0.85) translateY(0); opacity: 0.35; filter: grayscale(100%); }
+    }
+
+    .float-penalty-badge {
+      position: absolute;
+      top: -28px;
+      right: 0;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 950;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.45);
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    .float-penalty-badge.show {
+      animation: floatPenaltyAnim 1.2s forwards cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes floatPenaltyAnim {
+      0% { opacity: 0; transform: translateY(8px) scale(0.6); }
+      25% { opacity: 1; transform: translateY(-8px) scale(1.2); }
+      75% { opacity: 1; transform: translateY(-16px) scale(1); }
+      100% { opacity: 0; transform: translateY(-28px) scale(0.8); }
+    }
+
+    .card-scene.shake {
+      animation: screenShake 0.5s ease-in-out;
+    }
+
+    @keyframes screenShake {
+      0%, 100% { transform: translateX(0); }
+      15% { transform: translateX(-9px) rotate(-1.5deg); }
+      35% { transform: translateX(9px) rotate(1.5deg); }
+      55% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* 3D 翻轉卡片系統 */
+    .card-scene {
+      perspective: 1000px;
+      min-height: 465px;
+      position: relative;
+    }
+
+    .flipper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 465px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flipper.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 465px;
+      backface-visibility: hidden;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.6rem 1.6rem;
+      box-shadow: var(--shadow-md);
+      border: 3.5px solid #fde68a;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .card-front {
+      background-color: var(--color-surface);
+      justify-content: space-evenly;
+    }
+
+    .question-progress-tag {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 950;
+      color: #92400e;
+      background: #fef3c7;
+      padding: 0.35rem 1.15rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.45rem;
+      border: 1.5px solid #fde68a;
+    }
+
+    .question-emoji {
+      font-size: 4.0rem;
+      text-align: center;
+      margin-bottom: 0.35rem;
+    }
+
+    .question-text {
+      font-size: 2.05rem;
+      font-weight: 950;
+      text-align: center;
+      line-height: 1.42;
+      margin-bottom: 0.45rem;
+      color: #0f172a;
+      max-width: 98%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 長題目自動縮放字級，杜絕超出膠囊卡片 */
+    .question-text.is-long {
+      font-size: 1.72rem;
+      line-height: 1.38;
+      margin-bottom: 0.35rem;
+    }
+
+    /* ⭕ / ❌ 是非大按鈕 */
+    .ox-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem;
+      width: 100%;
+    }
+
+    .btn-ox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 1.25rem 0.95rem;
+      font-size: 1.55rem;
+      font-weight: 950;
+      border-radius: 22px;
+      cursor: pointer;
+      border: none;
+      min-height: 135px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-ox-text {
+      white-space: nowrap;
+      font-size: 1.55rem;
+      font-weight: 950;
+    }
+
+    .btn-ox-correct {
+      background-color: #f0fdf4;
+      color: var(--color-correct);
+      border: 3.5px solid #86efac;
+      box-shadow: 0 7px 0 #22c55e;
+    }
+
+    .btn-ox-correct:hover {
+      background-color: #dcfce7;
+    }
+
+    .btn-ox-correct:active {
+      transform: translateY(5px);
+      box-shadow: 0 2px 0 #22c55e;
+    }
+
+    .btn-ox-wrong {
+      background-color: #fef2f2;
+      color: var(--color-wrong);
+      border: 3.5px solid #fca5a5;
+      box-shadow: 0 7px 0 #ef4444;
+    }
+
+    .btn-ox-wrong:hover {
+      background-color: #fee2e2;
+    }
+
+    .btn-ox-wrong:active {
+      transform: translateY(5px);
+      box-shadow: 0 2px 0 #ef4444;
+    }
+
+    .ox-icon {
+      font-size: 4.0rem;
+      line-height: 1;
+    }
+
+    /* 雙圖卡選擇題容器 */
+    .pic-choice-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem;
+      width: 100%;
+    }
+
+    .btn-pic-card {
+      background-color: #fff;
+      border: 3.5px solid #fde68a;
+      border-radius: 22px;
+      padding: 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 0 #d97706;
+      transition: all 0.15s ease;
+      min-height: 142px;
+      font-family: inherit;
+    }
+
+    .btn-pic-card:hover {
+      border-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .btn-pic-card:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #d97706;
+    }
+
+    .pic-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 0.45rem;
+      line-height: 1;
+    }
+
+    .pic-label {
+      font-size: 1.32rem;
+      font-weight: 950;
+      color: #451a03;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* 卡牌背面 (臺大獸醫系小叮嚀：字大、緊湊、無多餘留白) */
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+      text-align: center;
+      padding: 1.85rem 1.6rem;
+      justify-content: space-between;
+    }
+
+    .result-announcement {
+      font-size: 2.2rem;
+      font-weight: 950;
+      margin-bottom: 0.85rem;
+    }
+
+    .result-correct { color: var(--color-correct); }
+    .result-wrong { color: var(--color-wrong); }
+
+    .vet-golden-box {
+      background-color: #fefce8;
+      border: 3.5px solid #fef08a;
+      border-radius: 20px;
+      padding: 1.55rem 1.45rem;
+      margin-bottom: 1.45rem;
+      text-align: left;
+      box-shadow: 0 4px 14px rgba(120, 53, 15, 0.06);
+    }
+
+    .vet-badge-title {
+      font-size: 1.38rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .vet-golden-text {
+      font-size: 1.52rem;
+      font-weight: 900;
+      color: #78350f;
+      line-height: 1.62;
+    }
+
+    .btn-next-question {
+      background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+      color: #fff;
+      border: none;
+      border-radius: 18px;
+      padding: 1.2rem;
+      font-size: 1.45rem;
+      font-weight: 950;
+      cursor: pointer;
+      width: 100%;
+      min-height: 68px;
+      box-shadow: 0 7px 0 #9a3412;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-next-question:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #9a3412;
+    }
+
+    .fatal-warning-badge {
+      display: inline-block;
+      background: #fef2f2;
+      color: #dc2626;
+      border: 2px solid #f87171;
+      padding: 0.48rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 1.08rem;
+      font-weight: 950;
+      margin-bottom: 1.1rem;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.04); }
+    }
+
+    /* ==========================================================================
+       第 4 幕：守護榮譽結業證書 (S/A/B 正常過關結算 + 真實下載圖片)
+       ========================================================================== */
+    .cert-box {
+      background: #ffffff;
+      border: 5px double #b45309;
+      border-radius: var(--radius-lg);
+      padding: 2.35rem 1.85rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-corner-decor {
+      position: absolute;
+      font-size: 3.2rem;
+      opacity: 0.12;
+      user-select: none;
+      pointer-events: none;
+    }
+    .cert-decor-tl { top: 10px; left: 14px; }
+    .cert-decor-tr { top: 10px; right: 14px; }
+    .cert-decor-bl { bottom: 10px; left: 14px; }
+    .cert-decor-br { bottom: 10px; right: 14px; }
+
+    .cert-heading {
+      font-size: 1.95rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-bottom: 0.35rem;
+    }
+
+    .cert-dept-tag {
+      display: inline-block;
+      font-size: 0.98rem;
+      font-weight: 950;
+      color: #78350f;
+      background: #fef3c7;
+      border: 2px solid #fde68a;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.35rem;
+    }
+
+    .cert-user-banner {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-name {
+      color: #d97706;
+      font-size: 1.6rem;
+      border-bottom: 3.5px solid #d97706;
+      padding: 0 0.45rem;
+    }
+
+    .grade-badge-card {
+      background: #fffbeb;
+      border: 4px solid #fde68a;
+      border-radius: var(--radius-lg);
+      padding: 1.45rem;
+      max-width: 390px;
+      margin: 0 auto 1.5rem auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .grade-letter {
+      font-size: 5rem;
+      font-weight: 950;
+      color: #b45309;
+      line-height: 1;
+    }
+
+    .grade-title {
+      font-size: 1.55rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-top: 0.4rem;
+    }
+
+    .advice-card {
+      background: #fefce8;
+      border-left: 6px solid #d97706;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.45rem;
+      text-align: left;
+      margin-bottom: 1.85rem;
+    }
+
+    .advice-title {
+      font-size: 1.2rem;
+      font-weight: 950;
+      color: #78350f;
+      margin-bottom: 0.45rem;
+    }
+
+    .advice-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #92400e;
+      line-height: 1.55;
+    }
+
+    .cert-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-cert {
+      font-size: 1.2rem;
+      font-weight: 950;
+      padding: 1.05rem 2.15rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: none;
+      min-height: 60px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-cert-download {
+      background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+      color: #fff;
+      box-shadow: 0 6px 0 #9a3412;
+    }
+
+    .btn-cert-download:active {
+      transform: translateY(3px);
+      box-shadow: 0 3px 0 #9a3412;
+    }
+
+    .btn-cert-replay {
+      background: #fef3c7;
+      color: #78350f;
+      border: 2.5px solid #fde68a;
+      box-shadow: 0 6px 0 #d97706;
+    }
+
+    .btn-cert-replay:active {
+      transform: translateY(3px);
+      box-shadow: 0 3px 0 #d97706;
+    }
+
+    /* ==========================================================================
+       第 5 幕：【🚨 守護失敗】不及格飼主警告證書 (Game Over Screen)
+       ========================================================================== */
+    .fatal-box {
+      background: #ffffff;
+      border: 5px solid var(--color-fatal);
+      border-radius: var(--radius-lg);
+      padding: 2.35rem 1.85rem;
+      text-align: center;
+      box-shadow: var(--shadow-fatal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fatal-tombstone {
+      font-size: 5rem;
+      margin-bottom: 0.4rem;
+      animation: shake 0.6s ease-in-out;
+    }
+
+    .fatal-heading {
+      font-size: 2rem;
+      font-weight: 950;
+      color: var(--color-fatal);
+      margin-bottom: 0.4rem;
+    }
+
+    .fatal-dept-tag {
+      display: inline-block;
+      font-size: 0.98rem;
+      font-weight: 950;
+      color: #991b1b;
+      background: #fef2f2;
+      border: 2px solid #fecaca;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.35rem;
+    }
+
+    .fatal-banner {
+      font-size: 1.3rem;
+      font-weight: 950;
+      color: #450a0a;
+      background: #fef2f2;
+      border: 2px dashed #fca5a5;
+      padding: 1rem 1.35rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .fatal-grade-badge {
+      background: #fef2f2;
+      border: 4px solid #dc2626;
+      border-radius: var(--radius-lg);
+      padding: 1.45rem;
+      max-width: 390px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .fatal-grade-letter {
+      font-size: 5.2rem;
+      font-weight: 950;
+      color: #dc2626;
+      line-height: 1;
+    }
+
+    .fatal-grade-title {
+      font-size: 1.55rem;
+      font-weight: 950;
+      color: #991b1b;
+      margin-top: 0.4rem;
+    }
+
+    .fatal-warning-card {
+      background: #fff5f5;
+      border-left: 6px solid #dc2626;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.45rem;
+      text-align: left;
+      margin-bottom: 1.85rem;
+    }
+
+    .fatal-warning-title {
+      font-size: 1.2rem;
+      font-weight: 950;
+      color: #991b1b;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .fatal-warning-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #7f1d1d;
+      line-height: 1.55;
+    }
+
+    .btn-fatal-retry {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: #ffffff;
+      font-size: 1.38rem;
+      font-weight: 950;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 1.2rem 2.6rem;
+      cursor: pointer;
+      box-shadow: 0 7px 0 #7f1d1d;
+      transition: all 0.15s ease;
+      min-height: 70px;
+      width: 100%;
+      max-width: 430px;
+      font-family: inherit;
+    }
+
+    .btn-fatal-retry:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #7f1d1d;
+    }
+
+    /* 手機端 RWD 深度相容優化 (Mobile First-Class) */
+    @media (max-width: 640px) {
+      .main-container {
+        padding: 1rem 0.85rem 3.5rem 0.85rem;
+      }
+      .hero-main-title {
+        font-size: 1.75rem;
+      }
+      .hero-fade-quote {
+        font-size: 1.1rem;
+      }
+      .btn-hero-journey {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        min-height: 64px;
+      }
+      .game-navbar {
+        padding: 0.5rem 0.75rem;
+        gap: 0.35rem;
+        margin-bottom: 0.85rem;
+      }
+      .btn-back-home {
+        padding: 0.4rem 0.65rem;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+      .pet-status-pill {
+        font-size: 0.98rem;
+        gap: 0.25rem;
+        white-space: nowrap;
+      }
+      .hearts-container {
+        padding: 0.25rem 0.55rem;
+        gap: 0.25rem;
+      }
+      .heart-item {
+        font-size: 1.35rem;
+      }
+      .pets-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .pet-card {
+        padding: 1.25rem 1rem;
+        min-height: 210px;
+      }
+      .card-scene, .flipper {
+        min-height: 440px;
+      }
+      .card-face {
+        padding: 1.15rem 0.95rem 1.05rem;
+        min-height: 440px;
+      }
+      .card-front {
+        justify-content: space-evenly;
+      }
+      .question-progress-tag {
+        font-size: 0.96rem;
+        padding: 0.28rem 0.9rem;
+      }
+      .question-emoji {
+        font-size: 3.2rem;
+        margin-bottom: 0.25rem;
+      }
+      .question-text {
+        font-size: 1.52rem;
+        font-weight: 950;
+        margin-bottom: 0.35rem;
+        line-height: 1.38;
+      }
+      .question-text.is-long {
+        font-size: 1.35rem;
+        line-height: 1.36;
+        margin-bottom: 0.35rem;
+      }
+      .ox-container, .pic-choice-container {
+        gap: 0.85rem;
+      }
+      .btn-ox {
+        min-height: 115px;
+        font-size: 1.3rem;
+        padding: 0.85rem 0.5rem;
+        gap: 0.35rem;
+        border-radius: 18px;
+      }
+      .btn-ox-text {
+        font-size: clamp(0.95rem, 3.4vw, 1.2rem);
+        font-weight: 950;
+        white-space: nowrap;
+      }
+      .ox-icon {
+        font-size: 3.0rem;
+      }
+      .btn-pic-card {
+        padding: 0.95rem 0.65rem;
+        min-height: 122px;
+        border-radius: 18px;
+      }
+      .pic-emoji {
+        font-size: 2.8rem;
+        margin-bottom: 0.3rem;
+      }
+      .pic-label {
+        font-size: 1.18rem;
+        font-weight: 950;
+        line-height: 1.35;
+        color: #451a03;
+      }
+      .card-back {
+        padding: 1.15rem 0.95rem 1.05rem;
+        justify-content: space-between;
+      }
+      .result-announcement {
+        font-size: 1.72rem;
+        font-weight: 950;
+        margin-bottom: 0.65rem;
+      }
+      .vet-golden-box {
+        padding: 1.15rem 0.95rem;
+        margin-bottom: 1.05rem;
+        border-radius: 18px;
+      }
+      .vet-badge-title {
+        font-size: 1.18rem;
+        font-weight: 950;
+        margin-bottom: 0.55rem;
+      }
+      .vet-golden-text {
+        font-size: 1.28rem;
+        font-weight: 900;
+        line-height: 1.55;
+      }
+      .btn-next-question {
+        min-height: 58px;
+        font-size: 1.28rem;
+        font-weight: 950;
+        padding: 0.85rem 1.2rem;
+        border-radius: 18px;
+      }
+      .cert-box, .fatal-box {
+        padding: 1.75rem 1.1rem;
+      }
+      .cert-heading, .fatal-heading {
+        font-size: 1.55rem;
+      }
+      .grade-letter, .fatal-grade-letter {
+        font-size: 4rem;
+      }
+      .easter-pet {
+        font-size: 2rem;
+      }
+      .ep-pos-ml { left: 4px; top: 12%; }
+      .ep-pos-mr { right: 4px; top: 18%; }
+      .ep-pos-br2 { right: 6px; bottom: 6px; }
+      .ep-pos-tl2 { left: 6px; top: 8px; }
+      .ep-pos-tr2 { right: 6px; top: 8px; }
+    }
+
+    #certCanvas {
+      display: none;
+    }
+
+    /* ==========================================================================
+       教育部標準：漢字右側注音排版 (Taiwan Textbook Zhuyin Right-side System)
+       ========================================================================== */
+    .zy-w {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: baseline;
+      margin: 0 1px;
+      line-height: 1;
+    }
+    .zy-c {
+      font-size: 1em;
+      font-weight: inherit;
+      color: inherit;
+      line-height: 1;
+    }
+    .zy-r {
+      display: inline-grid;
+      grid-template-columns: auto 7px;
+      align-items: center;
+      margin-left: 1.5px;
+      margin-right: 1px;
+      user-select: none;
+      font-family: -apple-system, "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", sans-serif;
+      line-height: 1;
+      transform: translateY(-0.05em);
+    }
+    .zy-b {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.38em;
+      font-weight: 800;
+      line-height: 1.05;
+      color: #b45309; /* 琥珀焦糖拿鐵色 */
+      letter-spacing: -0.04em;
+    }
+    .zy-t {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      font-size: 0.36em;
+      font-weight: 900;
+      color: #b45309;
+      line-height: 1;
+      margin-left: 0.5px;
+    }
+    .zy-t .tone-2 { align-self: flex-start; margin-top: 1px; }
+    .zy-t .tone-3 { align-self: flex-end; margin-bottom: 1px; }
+    .zy-t .tone-4 { align-self: flex-start; margin-top: 1px; }
+    .zy-light {
+      font-size: 0.9em;
+      font-weight: 900;
+      color: #b45309;
+      margin-bottom: -2px;
+      line-height: 0.8;
+    }
+
+    /* 關閉注音模式：一鍵瞬間切換 */
+    body.zhuyin-off .zy-r {
+      display: none !important;
+    }
+
+    /* 頂部導航列工具區 */
+    .header-tools-cluster {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* 頂部導航列注音模式切換鈕 */
+    .btn-zhuyin-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-full);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #92400e;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(217, 119, 6, 0.16);
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .btn-zhuyin-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 12px rgba(217, 119, 6, 0.24);
+    }
+    .btn-zhuyin-toggle:active {
+      transform: translateY(1px);
+    }
+    .btn-zhuyin-toggle .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #16a34a; /* 綠色：開啟中 */
+    }
+    body.zhuyin-off .btn-zhuyin-toggle {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #64748b;
+      box-shadow: none;
+    }
+    body.zhuyin-off .btn-zhuyin-toggle .status-dot {
+      background-color: #94a3b8; /* 灰色：關閉中 */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 頂部雙品牌導航 -->
+  <header class="museum-header">
+    <div class="header-content">
+      <div class="brand-cluster">
+        <span class="badge-ntuvet">臺大獸醫專業學院衛教計畫</span>
+        <span class="badge-museum">國立臺灣科學教育館</span>
+      </div>
+      <div class="header-tools-cluster">
+        <div class="header-tagline">
+          <span>🐾</span>
+          <span>十五年的約定</span>
+        </div>
+        <button id="btn-zhuyin-toggle" class="btn-zhuyin-toggle" onclick="toggleZhuyinMode()" aria-label="切換注音模式">
+          <span>🔤</span>
+          <span id="ui-zhuyin-label">注音：開啟</span>
+          <span class="status-dot"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- 第 1 幕：重構獨立歡迎首頁 (法式奶油風格 + 32px 蓬鬆圓角 + 漸顯滑入) -->
+    <section id="screen-welcome" class="screen-view active">
+      <div class="welcome-showcase">
+        
+        <!-- 巨大化臺大獸醫專業學院橫幅 -->
+        <div class="hero-authority-badge">
+          <span class="hero-authority-icon">🏛️</span>
+          <span>國立臺灣大學獸醫專業學院 ✕ 國立臺灣科學教育館</span>
+        </div>
+
+        <h1 class="hero-main-title">十五年的約定</h1>
+        <div class="hero-exhibition-tag">🐾 飼主責任特展 • 生命教育承諾</div>
+
+        <!-- 進場漸顯滑入金句 -->
+        <div class="hero-fade-quote">
+          <span>「想養」只是一時喜歡，</span>
+          <span class="sub-quote">「準備好」是一生的承諾！</span>
+        </div>
+
+        <!-- 學員登記卡片 -->
+        <div class="student-entry-card">
+          <label class="student-entry-label" for="player-name-input">🌟 請輸入守護小學員姓名：</label>
+          <input type="text" id="player-name-input" class="name-input-modern" maxlength="8" placeholder="小明同學" value="">
+        </div>
+
+        <button class="btn-hero-journey" onclick="goToSelectScreen()">
+          踏上守護之旅 ➔
+        </button>
+      </div>
+      <!-- 專屬空白處彩蛋：單一寵物互動，絕不遮擋任何文字與交互 -->
+      <div class="easter-safe-zone">
+        <div class="easter-pet" onclick="playEasterPet('cat', this)" title="點我聽叫聲！">🐱</div>
+      </div>
+    </section>
+
+    <!-- 第 2 幕：挑選動物夥伴 (Pet Selection Screen) -->
+    <section id="screen-select" class="screen-view">
+      <div class="selection-header">
+        <h2 class="selection-title">🐾 請挑選一位動物夥伴，守護牠一生：</h2>
+        <p class="selection-subtitle">每個生命都有專屬的陪伴歲月與考驗！</p>
+      </div>
+
+      <div class="pets-grid">
+        <div class="pet-card" onclick="selectPet('dog')">
+          <div>
+            <div class="pet-card-avatar">🐕</div>
+            <h3 class="pet-card-name">米克斯汪汪</h3>
+            <span class="pet-card-pill">守護承諾：15 年 (共 7 關)</span>
+          </div>
+          <button class="pet-btn-pick">認養狗狗 ➔</button>
+        </div>
+
+        <div class="pet-card" onclick="selectPet('cat')">
+          <div>
+            <div class="pet-card-avatar">🐈</div>
+            <h3 class="pet-card-name">虎斑喵喵</h3>
+            <span class="pet-card-pill">守護承諾：16 年 (共 7 關)</span>
+          </div>
+          <button class="pet-btn-pick">認養貓咪 ➔</button>
+        </div>
+
+        <div class="pet-card" onclick="selectPet('rabbit')">
+          <div>
+            <div class="pet-card-avatar">🐇</div>
+            <h3 class="pet-card-name">垂耳兔兔</h3>
+            <span class="pet-card-pill">守護承諾：10 年 (共 7 關)</span>
+          </div>
+          <button class="pet-btn-pick">認養兔兔 ➔</button>
+        </div>
+
+        <div class="pet-card" onclick="selectPet('hamster')">
+          <div>
+            <div class="pet-card-avatar">🐹</div>
+            <h3 class="pet-card-name">三線倉鼠</h3>
+            <span class="pet-card-pill">守護承諾：3 年 (共 7 關)</span>
+          </div>
+          <button class="pet-btn-pick">認養倉鼠 ➔</button>
+        </div>
+      </div>
+      <!-- 專屬空白處彩蛋：單一寵物互動，絕不遮擋任何文字與交互 -->
+      <div class="easter-safe-zone">
+        <div class="easter-pet" onclick="playEasterPet('dog', this)" title="點我聽叫聲！">🐶</div>
+      </div>
+    </section>
+
+    <!-- 第 3 幕：生命考驗答題室 (守護愛心生命條 + 扣心碎裂動畫) -->
+    <section id="screen-game" class="screen-view">
+      <div class="game-navbar">
+        <button class="btn-back-home" onclick="confirmQuitToHome()">🏠 回首頁</button>
+        <div class="pet-status-pill">
+          <span id="ui-pet-avatar" style="font-size:1.6rem;">🐕</span>
+          <span id="ui-pet-year" style="color:var(--color-primary);">第 1 題</span>
+        </div>
+        <!-- 守護愛心生命條 -->
+        <div class="hearts-container" id="ui-hearts-container">
+          <span class="heart-item active" id="heart-0">❤️</span>
+          <span class="heart-item active" id="heart-1">❤️</span>
+          <span class="heart-item active" id="heart-2">❤️</span>
+          <div class="float-penalty-badge" id="ui-float-penalty">-1 ❤️ 守護愛心</div>
+        </div>
+      </div>
+
+      <div class="card-scene">
+        <div class="flipper" id="card-flipper">
+          
+          <!-- 正面題目卡 -->
+          <div class="card-face card-front">
+            <div>
+              <div style="text-align:center;">
+                <span class="question-progress-tag" id="ui-q-tag">第 1 / 7 關考驗</span>
+              </div>
+              <div class="question-emoji" id="ui-q-emoji">🌙</div>
+              <h3 class="question-text" id="ui-q-text">題目載入中...</h3>
+            </div>
+
+            <div id="ui-options-wrapper" class="ox-container"></div>
+          </div>
+
+          <!-- 背面解答卡 (臺大獸醫系小叮嚀：字大、無留白) -->
+          <div class="card-face card-back">
+            <div>
+              <div class="result-announcement" id="ui-result-title">✅ 答對了！太棒了！</div>
+              <div id="ui-fatal-badge-wrap"></div>
+              
+              <div class="vet-golden-box">
+                <div class="vet-badge-title">🩺 臺大獸醫系小叮嚀：</div>
+                <p class="vet-golden-text" id="ui-vet-tip">衛教小金句載入中...</p>
+              </div>
+            </div>
+
+            <button class="btn-next-question" id="ui-btn-next" onclick="nextQuestion()">
+              下一題 ➔
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <!-- 專屬空白處彩蛋：單一寵物互動，絕不遮擋任何文字與交互 -->
+      <div class="easter-safe-zone">
+        <div class="easter-pet" onclick="playEasterPet('rabbit', this)" title="點我聽叫聲！">🐰</div>
+      </div>
+    </section>
+
+    <!-- 第 4 幕：守護榮譽結業證書 (S/A/B 正常過關結算 + 真實下載圖片) -->
+    <section id="screen-cert" class="screen-view">
+      <div class="cert-box">
+        <div class="cert-corner-decor cert-decor-tl">🐾</div>
+        <div class="cert-corner-decor cert-decor-tr">🦴</div>
+        <div class="cert-corner-decor cert-decor-bl">🐟</div>
+        <div class="cert-corner-decor cert-decor-br">🐾</div>
+
+        <h2 class="cert-heading">🏆 特派良善飼主榮譽結業證書</h2>
+        <div class="cert-dept-tag">國立臺灣大學獸醫學系 ✕ 國立臺灣科學教育館 聯合頒發</div>
+
+        <div class="cert-user-banner">
+          小學員 <strong class="highlight-name" id="ui-cert-player">小明同學</strong> 成功守護
+          <strong style="color:var(--color-accent);" id="ui-cert-pet">米克斯汪汪</strong> 終老！
+        </div>
+
+        <div class="grade-badge-card">
+          <div class="grade-letter" id="ui-cert-grade">S</div>
+          <div class="grade-title" id="ui-cert-title">🌟 金牌典範小獸醫</div>
+        </div>
+
+        <div class="advice-card">
+          <div class="advice-title">📋 臺大獸醫系陪伴叮嚀：</div>
+          <p class="advice-text" id="ui-cert-advice">
+            生活改變，毛孩永遠是最好的家人！記得定期打預防針、植晶片，生病時溫柔照顧，守護一生不離不棄！
+          </p>
+        </div>
+
+        <div class="cert-btn-group">
+          <button class="btn-cert btn-cert-download" onclick="downloadCertificateImage()">
+            📥 下載證書圖片 (PNG)
+          </button>
+          <button class="btn-cert btn-cert-replay" onclick="resetToHome()">
+            🔄 重新體驗其他動物
+          </button>
+        </div>
+      </div>
+      <!-- 專屬空白處彩蛋：單一寵物互動，絕不遮擋任何文字與交互 -->
+      <div class="easter-safe-zone">
+        <div class="easter-pet" onclick="playEasterPet('dog', this)" title="點我聽叫聲！">🐕</div>
+      </div>
+    </section>
+
+    <!-- 第 5 幕：【🚨 守護失敗】不及格飼主警告證書 (打錯三題毛孩死亡，直接結束) -->
+    <section id="screen-fatal" class="screen-view">
+      <div class="fatal-box">
+        <div class="cert-corner-decor cert-decor-tl">💔</div>
+        <div class="cert-corner-decor cert-decor-tr">🐾</div>
+        <div class="cert-corner-decor cert-decor-bl">🦴</div>
+        <div class="cert-corner-decor cert-decor-br">💀</div>
+
+        <div class="fatal-tombstone">🪦💔💀</div>
+        <h2 class="fatal-heading">🚨 守護失敗：不及格飼主警告</h2>
+        <div class="fatal-dept-tag">國立臺灣大學獸醫學系 • 生命教育警告</div>
+
+        <div class="fatal-banner">
+          學員 <strong style="color:#b91c1c; font-size:1.35rem;" id="ui-fatal-player">小明同學</strong>：
+          你的毛孩 <strong style="color:#b91c1c;" id="ui-fatal-pet">米克斯汪汪</strong> 因累積失去 3 顆守護心，不幸痛苦夭折！
+        </div>
+
+        <!-- F 級 不及格飼主徽章 -->
+        <div class="fatal-grade-badge">
+          <div class="fatal-grade-letter">F</div>
+          <div class="fatal-grade-title">💀 致命大疏忽！不及格飼主</div>
+        </div>
+
+        <!-- 臺大獸醫系嚴正警告 -->
+        <div class="fatal-warning-card">
+          <div class="fatal-warning-title">⚠️ 臺大獸醫系嚴正警告：</div>
+          <p class="fatal-warning-text" id="ui-fatal-advice">
+            生命只有一次無法重來！隨意餵食巧克力、生病拖延不就醫都會害死毛孩。請好好反省，學會正確觀念再來重試！
+          </p>
+        </div>
+
+        <button class="btn-fatal-retry" onclick="resetToHome()">
+          🔄 痛定思痛，重新反省學習
+        </button>
+      </div>
+      <!-- 專屬空白處彩蛋：單一寵物互動，絕不遮擋任何文字與交互 -->
+      <div class="easter-safe-zone">
+        <div class="easter-pet" onclick="playEasterPet('hamster', this)" title="點我聽叫聲！">🐹</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 隱藏 Canvas 用於動態渲染生成下載的 PNG 證書圖 -->
+  <canvas id="certCanvas" width="1000" height="700"></canvas>
+
+  <script>
+const ZHUYIN_DICT = {"丸": "ㄨㄢˊ", "乾": "ㄍㄢ", "乙": "ㄧˇ", "之": "ㄓ", "世": "ㄕˋ", "三": "ㄙㄢ", "上": "ㄕㄤˋ", "不": "ㄅㄨˋ", "下": "ㄒㄧㄚˋ", "一": "ㄧ", "事": "ㄕˋ", "亂": "ㄌㄨㄢˋ", "並": "ㄅㄧㄥˋ", "予": "ㄩˊ", "丟": "ㄉㄧㄡ", "久": "ㄐㄧㄡˇ", "串": "ㄔㄨㄢˋ", "了": "ㄌㄜ˙", "乳": "ㄖㄨˇ", "也": "ㄧㄝˇ", "主": "ㄓㄨˇ", "亮": "ㄌㄧㄤˋ", "什": "ㄕˊ", "人": "ㄖㄣˊ", "以": "ㄧˇ", "代": "ㄉㄞˋ", "仍": "ㄖㄥˊ", "且": "ㄑㄧㄝˇ", "五": "ㄨˇ", "互": "ㄏㄨˋ", "中": "ㄓㄨㄥ", "乏": "ㄈㄚˊ", "位": "ㄨㄟˋ", "亡": "ㄨㄤˊ", "份": "ㄈㄣˋ", "任": "ㄖㄣˋ", "但": "ㄉㄢˋ", "住": "ㄓㄨˋ", "何": "ㄏㄜˊ", "作": "ㄗㄨㄛˋ", "交": "ㄐㄧㄠ", "休": "ㄒㄧㄡ", "來": "ㄌㄞˊ", "低": "ㄉㄧ", "伴": "ㄅㄢˋ", "侵": "ㄑㄧㄣ", "估": "ㄍㄨ", "保": "ㄅㄠˇ", "例": "ㄌㄧˋ", "係": "ㄒㄧˋ", "你": "ㄋㄧˇ", "個": "ㄍㄜˋ", "倉": "ㄘㄤ", "使": "ㄕˇ", "他": "ㄊㄚ", "信": "ㄒㄧㄣˋ", "依": "ㄧ", "修": "ㄒㄧㄡ", "候": "ㄏㄡˋ", "倒": "ㄉㄠˇ", "供": "ㄍㄨㄥ", "倫": "ㄌㄨㄣˊ", "值": "ㄓˊ", "便": "ㄅㄧㄢˋ", "們": "ㄇㄣ˙", "做": "ㄗㄨㄛˋ", "偶": "ㄡˇ", "健": "ㄐㄧㄢˋ", "側": "ㄘㄜˋ", "備": "ㄅㄟˋ", "偷": "ㄊㄡ", "停": "ㄊㄧㄥˊ", "傳": "ㄔㄨㄢˊ", "充": "ㄔㄨㄥ", "先": "ㄒㄧㄢ", "傷": "ㄕㄤ", "像": "ㄒㄧㄤˋ", "克": "ㄎㄜˋ", "儲": "ㄔㄨˊ", "免": "ㄇㄧㄢˇ", "優": "ㄧㄡ", "入": "ㄖㄨˋ", "偽": "ㄨㄟˋ", "全": "ㄑㄩㄢˊ", "僅": "ㄐㄧㄣˇ", "再": "ㄗㄞˋ", "凸": "ㄊㄨˊ", "冒": "ㄇㄠˋ", "出": "ㄔㄨ", "元": "ㄩㄢˊ", "凹": "ㄠ", "冰": "ㄅㄧㄥ", "內": "ㄋㄟˋ", "列": "ㄌㄧㄝˋ", "共": "ㄍㄨㄥˋ", "兩": "ㄌㄧㄤˇ", "分": "ㄈㄣ", "冬": "ㄉㄨㄥ", "兔": "ㄊㄨˋ", "具": "ㄐㄩˋ", "價": "ㄐㄧㄚˋ", "冷": "ㄌㄥˇ", "利": "ㄌㄧˋ", "典": "ㄉㄧㄢˇ", "刀": "ㄉㄠ", "切": "ㄑㄧㄝˋ", "別": "ㄅㄧㄝˊ", "公": "ㄍㄨㄥ", "刺": "ㄘˋ", "光": "ㄍㄨㄤ", "制": "ㄓˋ", "剔": "ㄊㄧ", "剃": "ㄊㄧˋ", "刷": "ㄕㄨㄚ", "其": "ㄑㄧˊ", "前": "ㄑㄧㄢˊ", "劇": "ㄐㄩˋ", "剛": "ㄍㄤ", "則": "ㄗㄜˊ", "割": "ㄍㄜ", "創": "ㄔㄨㄤˋ", "刻": "ㄎㄜˋ", "到": "ㄉㄠˋ", "剩": "ㄕㄥˋ", "功": "ㄍㄨㄥ", "助": "ㄓㄨˋ", "剪": "ㄐㄧㄢˇ", "力": "ㄌㄧˋ", "加": "ㄐㄧㄚ", "勾": "ㄍㄡ", "半": "ㄅㄢˋ", "勤": "ㄑㄧㄣˊ", "勿": "ㄨˋ", "包": "ㄅㄠ", "區": "ㄑㄩ", "務": "ㄨˋ", "化": "ㄏㄨㄚˋ", "卡": "ㄎㄚˇ", "協": "ㄒㄧㄝˊ", "危": "ㄨㄟˊ", "千": "ㄑㄧㄢ", "參": "ㄘㄢ", "卻": "ㄑㄩㄝˋ", "友": "ㄧㄡˇ", "厚": "ㄏㄡˋ", "原": "ㄩㄢˊ", "動": "ㄉㄨㄥˋ", "劑": "ㄐㄧˋ", "勝": "ㄕㄥˋ", "即": "ㄐㄧˊ", "又": "ㄧㄡˋ", "及": "ㄐㄧˊ", "反": "ㄈㄢˇ", "取": "ㄑㄩˇ", "叫": "ㄐㄧㄠˋ", "叢": "ㄘㄨㄥˊ", "印": "ㄧㄣˋ", "受": "ㄕㄡˋ", "吃": "ㄔ", "口": "ㄎㄡˇ", "叮": "ㄉㄧㄥ", "十": "ㄕˊ", "吐": "ㄊㄨˇ", "去": "ㄑㄩˋ", "名": "ㄇㄧㄥˊ", "合": "ㄏㄜˊ", "吠": "ㄈㄟˋ", "卵": "ㄌㄨㄢˇ", "台": "ㄊㄞ", "吞": "ㄊㄨㄣ", "吊": "ㄉㄧㄠˋ", "否": "ㄈㄡˇ", "可": "ㄎㄜˇ", "另": "ㄌㄧㄥˋ", "吵": "ㄔㄠˇ", "只": "ㄓˇ", "吸": "ㄒㄧ", "向": "ㄒㄧㄤˋ", "命": "ㄇㄧㄥˋ", "含": "ㄏㄢˊ", "吻": "ㄨㄣˇ", "呈": "ㄔㄥˊ", "和": "ㄏㄜˊ", "呀": "ㄧㄚ", "周": "ㄓㄡ", "咖": "ㄎㄚ", "呼": "ㄏㄨ", "哎": "ㄞ", "哈": "ㄏㄚ", "品": "ㄆㄧㄣˇ", "告": "ㄍㄠˋ", "同": "ㄊㄨㄥˊ", "咬": "ㄧㄠˇ", "哀": "ㄞ", "哺": "ㄅㄨˇ", "咪": "ㄇㄧ", "唇": "ㄓㄣ", "哪": "ㄋㄚˇ", "員": "ㄩㄢˊ", "句": "ㄐㄩˋ", "啃": "ㄎㄣˇ", "商": "ㄕㄤ", "問": "ㄨㄣˋ", "喜": "ㄒㄧˇ", "喝": "ㄏㄜ", "善": "ㄕㄢˋ", "喔": "ㄨㄛˋ", "味": "ㄨㄟˋ", "嘔": "ㄡˇ", "單": "ㄉㄢ", "噗": "ㄆㄨ", "嚴": "ㄧㄢˊ", "嗎": "ㄇㄚ˙", "四": "ㄙˋ", "嚀": "ㄋㄧㄥˊ", "喵": "ㄇㄧㄠ", "器": "ㄑㄧˋ", "嗅": "ㄒㄧㄡˋ", "固": "ㄍㄨˋ", "困": "ㄎㄨㄣˋ", "因": "ㄧㄣ", "園": "ㄩㄢˊ", "哭": "ㄎㄨ", "嚇": "ㄏㄜˋ", "噴": "ㄆㄣ", "嘴": "ㄗㄨㄟˇ", "在": "ㄗㄞˋ", "圖": "ㄊㄨˊ", "地": "ㄉㄧˋ", "垢": "ㄍㄡˋ", "圾": "ㄐㄧˊ", "堆": "ㄉㄨㄟ", "囊": "ㄋㄤˊ", "垃": "ㄌㄜˋ", "均": "ㄐㄩㄣ", "域": "ㄩˋ", "墜": "ㄓㄨㄟˋ", "垂": "ㄔㄨㄟˊ", "基": "ㄐㄧ", "塊": "ㄎㄨㄞˋ", "型": "ㄒㄧㄥˊ", "壽": "ㄕㄡˋ", "國": "ㄍㄨㄛˊ", "增": "ㄗㄥ", "壓": "ㄧㄚ", "回": "ㄏㄨㄟˊ", "壞": "ㄏㄨㄞˋ", "塵": "ㄔㄣˊ", "壁": "ㄅㄧˋ", "圓": "ㄩㄢˊ", "士": "ㄕˋ", "塞": "ㄙㄜˋ", "夏": "ㄒㄧㄚˋ", "夜": "ㄧㄝˋ", "外": "ㄨㄞˋ", "境": "ㄐㄧㄥˋ", "堵": "ㄉㄨˇ", "天": "ㄊㄧㄢ", "多": "ㄉㄨㄛ", "夠": "ㄍㄡˋ", "墊": "ㄉㄧㄢˋ", "失": "ㄕ", "大": "ㄉㄚˋ", "姿": "ㄗ", "夥": "ㄏㄨㄛˇ", "奇": "ㄑㄧˊ", "夾": "ㄐㄧㄚˊ", "場": "ㄔㄤˊ", "奔": "ㄅㄣ", "太": "ㄊㄞˋ", "孔": "ㄎㄨㄥˇ", "威": "ㄨㄟ", "如": "ㄖㄨˊ", "姓": "ㄒㄧㄥˋ", "好": "ㄏㄠˇ", "奶": "ㄋㄞˇ", "夭": "ㄧㄠ", "媚": "ㄇㄟˋ", "奮": "ㄈㄣˋ", "子": "ㄗˇ", "孕": "ㄩㄣˋ", "字": "ㄗˋ", "孩": "ㄏㄞˊ", "孳": "ㄗ", "孢": "ㄅㄠ", "學": "ㄒㄩㄝˊ", "室": "ㄕˋ", "守": "ㄕㄡˇ", "存": "ㄘㄨㄣˊ", "容": "ㄖㄨㄥˊ", "媽": "ㄇㄚ", "完": "ㄨㄢˊ", "宮": "ㄍㄨㄥ", "安": "ㄢ", "寂": "ㄐㄧˊ", "寵": "ㄔㄨㄥˇ", "富": "ㄈㄨˋ", "害": "ㄏㄞˋ", "實": "ㄕˊ", "寞": "ㄇㄛˋ", "家": "ㄐㄧㄚ", "寄": "ㄐㄧˋ", "密": "ㄇㄧˋ", "封": "ㄈㄥ", "季": "ㄐㄧˋ", "專": "ㄓㄨㄢ", "寶": "ㄅㄠˇ", "尊": "ㄗㄨㄣ", "對": "ㄉㄨㄟˋ", "導": "ㄉㄠˇ", "就": "ㄐㄧㄡˋ", "定": "ㄉㄧㄥˋ", "尾": "ㄨㄟˇ", "少": "ㄕㄠˇ", "小": "ㄒㄧㄠˇ", "層": "ㄘㄥˊ", "屎": "ㄕˇ", "尖": "ㄐㄧㄢ", "己": "ㄐㄧˇ", "尿": "ㄋㄧㄠˋ", "居": "ㄐㄩ", "島": "ㄉㄠˇ", "崇": "ㄔㄨㄥˊ", "巨": "ㄐㄩˋ", "屑": "ㄒㄧㄝˋ", "巢": "ㄔㄠˊ", "展": "ㄓㄢˇ", "巧": "ㄑㄧㄠˇ", "工": "ㄍㄨㄥ", "屁": "ㄆㄧˋ", "將": "ㄐㄧㄤ", "幅": "ㄈㄨˊ", "差": "ㄔㄚ", "尋": "ㄒㄩㄣˊ", "射": "ㄕㄜˋ", "幣": "ㄅㄧˋ", "帶": "ㄉㄞˋ", "幕": "ㄇㄨˋ", "布": "ㄅㄨˋ", "床": "ㄔㄨㄤˊ", "幫": "ㄅㄤ", "屬": "ㄕㄨˇ", "希": "ㄒㄧ", "師": "ㄕ", "度": "ㄉㄨˋ", "年": "ㄋㄧㄢˊ", "幸": "ㄒㄧㄥˋ", "康": "ㄎㄤ", "巴": "ㄅㄚ", "幾": "ㄐㄧˇ", "廂": "ㄒㄧㄤ", "庫": "ㄎㄨˋ", "廝": "ㄙ", "廢": "ㄈㄟˋ", "常": "ㄔㄤˊ", "建": "ㄐㄧㄢˋ", "巾": "ㄐㄧㄣ", "強": "ㄑㄧㄤˊ", "弱": "ㄖㄨㄛˋ", "彎": "ㄨㄢ", "延": "ㄧㄢˊ", "張": "ㄓㄤ", "式": "ㄕˋ", "彩": "ㄘㄞˇ", "徑": "ㄐㄧㄥˋ", "引": "ㄧㄣˇ", "形": "ㄒㄧㄥˊ", "影": "ㄧㄥˇ", "從": "ㄘㄨㄥˊ", "徵": "ㄓㄥ", "律": "ㄌㄩˋ", "很": "ㄏㄣˇ", "得": "ㄉㄜˊ", "徹": "ㄔㄜˋ", "待": "ㄉㄞˋ", "平": "ㄆㄧㄥˊ", "後": "ㄏㄡˋ", "幼": "ㄧㄡˋ", "徽": "ㄏㄨㄟ", "忍": "ㄖㄣˇ", "怎": "ㄗㄣˇ", "忽": "ㄏㄨ", "快": "ㄎㄨㄞˋ", "微": "ㄨㄟˊ", "心": "ㄒㄧㄣ", "思": "ㄙ", "德": "ㄉㄜˊ", "急": "ㄐㄧˊ", "恐": "ㄎㄨㄥˇ", "惡": "ㄜˋ", "性": "ㄒㄧㄥˋ", "情": "ㄑㄧㄥˊ", "意": "ㄧˋ", "態": "ㄊㄞˋ", "必": "ㄅㄧˋ", "悶": "ㄇㄣˋ", "愛": "ㄞˋ", "感": "ㄍㄢˇ", "息": "ㄒㄧˊ", "慢": "ㄇㄢˋ", "想": "ㄒㄧㄤˇ", "慘": "ㄘㄢˇ", "慣": "ㄍㄨㄢˋ", "底": "ㄉㄧˇ", "應": "ㄧㄥ", "慮": "ㄌㄩˋ", "念": "ㄋㄧㄢˋ", "懸": "ㄒㄩㄢˊ", "懼": "ㄐㄩˋ", "或": "ㄏㄨㄛˋ", "成": "ㄔㄥˊ", "我": "ㄨㄛˇ", "戶": "ㄏㄨˋ", "截": "ㄐㄧㄝˊ", "戳": "ㄔㄨㄛ", "手": "ㄕㄡˇ", "扭": "ㄋㄧㄡˇ", "才": "ㄘㄞˊ", "所": "ㄙㄨㄛˇ", "扣": "ㄎㄡˋ", "扁": "ㄅㄧㄢˇ", "憋": "ㄅㄧㄝ", "怕": "ㄆㄚˋ", "扎": "ㄓㄚ", "扯": "ㄔㄜˇ", "承": "ㄔㄥˊ", "打": "ㄉㄚˇ", "托": "ㄊㄨㄛ", "把": "ㄅㄚˇ", "抖": "ㄉㄡˇ", "憂": "ㄧㄡ", "房": "ㄈㄤˊ", "投": "ㄊㄡˊ", "拍": "ㄆㄞ", "折": "ㄓㄜˊ", "抓": "ㄓㄨㄚ", "抗": "ㄎㄤˋ", "抽": "ㄔㄡ", "指": "ㄓˇ", "抱": "ㄅㄠˋ", "拉": "ㄌㄚ", "挑": "ㄊㄧㄠ", "拿": "ㄋㄚˊ", "抹": "ㄇㄛˇ", "拖": "ㄊㄨㄛ", "掘": "ㄐㄩㄝˊ", "排": "ㄆㄞˊ", "持": "ㄔˊ", "挖": "ㄨㄚ", "找": "ㄓㄠˇ", "掠": "ㄌㄩㄝˋ", "採": "ㄘㄞˇ", "控": "ㄎㄨㄥˋ", "掙": "ㄓㄥ", "提": "ㄊㄧˊ", "接": "ㄐㄧㄝ", "援": "ㄩㄢˊ", "插": "ㄔㄚ", "搶": "ㄑㄧㄤˇ", "推": "ㄊㄨㄟ", "搬": "ㄅㄢ", "掩": "ㄧㄢˇ", "摸": "ㄇㄛ", "拭": "ㄕˋ", "損": "ㄙㄨㄣˇ", "播": "ㄅㄛˋ", "摔": "ㄕㄨㄞ", "掉": "ㄉㄧㄠˋ", "擋": "ㄉㄤˇ", "撿": "ㄐㄧㄢˇ", "摩": "ㄇㄛˊ", "換": "ㄏㄨㄢˋ", "搐": "ㄔㄨˋ", "擇": "ㄗㄜˊ", "擔": "ㄉㄢ", "擠": "ㄐㄧˇ", "撕": "ㄙ", "拔": "ㄅㄚˊ", "擎": "ㄑㄧㄥˊ", "撫": "ㄈㄨˇ", "擬": "ㄋㄧˇ", "按": "ㄢˋ", "擴": "ㄎㄨㄛˋ", "攝": "ㄕㄜˋ", "收": "ㄕㄡ", "敵": "ㄉㄧˊ", "支": "ㄓ", "效": "ㄒㄧㄠˋ", "教": "ㄐㄧㄠˋ", "斂": "ㄌㄧㄢˋ", "擦": "ㄘㄚ", "散": "ㄙㄢˋ", "整": "ㄓㄥˇ", "救": "ㄐㄧㄡˋ", "放": "ㄈㄤˋ", "方": "ㄈㄤ", "敲": "ㄑㄧㄠ", "敏": "ㄇㄧㄣˇ", "料": "ㄌㄧㄠˋ", "斯": "ㄙ", "敗": "ㄅㄞˋ", "文": "ㄨㄣˊ", "數": "ㄕㄨˋ", "斷": "ㄉㄨㄢˋ", "斑": "ㄅㄢ", "施": "ㄕ", "撞": "ㄓㄨㄤˋ", "旋": "ㄒㄩㄢˊ", "早": "ㄗㄠˇ", "於": "ㄩˊ", "新": "ㄒㄧㄣ", "景": "ㄐㄧㄥˇ", "暑": "ㄕㄨˇ", "易": "ㄧˋ", "旅": "ㄌㄩˇ", "日": "ㄖˋ", "暖": "ㄋㄨㄢˇ", "普": "ㄆㄨˇ", "最": "ㄗㄨㄟˋ", "晶": "ㄐㄧㄥ", "暗": "ㄢˋ", "是": "ㄕˋ", "明": "ㄇㄧㄥˊ", "昏": "ㄏㄨㄣ", "暴": "ㄅㄠˋ", "暫": "ㄓㄢˋ", "改": "ㄍㄞˇ", "更": "ㄍㄥ", "曲": "ㄑㄩ", "書": "ㄕㄨ", "會": "ㄏㄨㄟˋ", "月": "ㄩㄝˋ", "期": "ㄑㄧˊ", "木": "ㄇㄨˋ", "朋": "ㄆㄥˊ", "束": "ㄕㄨˋ", "朝": "ㄓㄠ", "板": "ㄅㄢˇ", "本": "ㄅㄣˇ", "核": "ㄏㄜˊ", "杜": "ㄉㄨˋ", "東": "ㄉㄨㄥ", "松": "ㄙㄨㄥ", "架": "ㄐㄧㄚˋ", "朵": "ㄉㄨㄛˇ", "果": "ㄍㄨㄛˇ", "柔": "ㄖㄡˊ", "時": "ㄕˊ", "框": "ㄎㄨㄤ", "株": "ㄓㄨ", "條": "ㄊㄧㄠˊ", "桶": "ㄊㄨㄥˇ", "棉": "ㄇㄧㄢˊ", "桿": "ㄍㄢˇ", "根": "ㄍㄣ", "棒": "ㄅㄤˋ", "查": "ㄔㄚˊ", "梳": "ㄕㄨ", "椎": "ㄓㄨㄟ", "棕": "ㄗㄨㄥ", "析": "ㄒㄧ", "未": "ㄨㄟˋ", "格": "ㄍㄜˊ", "業": "ㄧㄝˋ", "梨": "ㄌㄧˊ", "棄": "ㄑㄧˋ", "樂": "ㄌㄜˋ", "有": "ㄧㄡˇ", "樓": "ㄌㄡˊ", "服": "ㄈㄨˊ", "樣": "ㄧㄤˋ", "標": "ㄅㄧㄠ", "構": "ㄍㄡˋ", "橙": "ㄔㄥˊ", "橘": "ㄐㄩˊ", "模": "ㄇㄛˊ", "橫": "ㄏㄥˊ", "權": "ㄑㄩㄢˊ", "樹": "ㄕㄨˋ", "次": "ㄘˋ", "歡": "ㄏㄨㄢ", "檢": "ㄐㄧㄢˇ", "染": "ㄖㄢˇ", "植": "ㄓˊ", "歲": "ㄙㄨㄟˋ", "死": "ㄙˇ", "殊": "ㄕㄨ", "榮": "ㄖㄨㄥˊ", "止": "ㄓˇ", "機": "ㄐㄧ", "歸": "ㄍㄨㄟ", "毛": "ㄇㄠˊ", "步": "ㄅㄨˋ", "每": "ㄇㄟˇ", "毒": "ㄉㄨˊ", "極": "ㄐㄧˊ", "殘": "ㄘㄢˊ", "氣": "ㄑㄧˋ", "殼": "ㄎㄜˊ", "比": "ㄅㄧˇ", "正": "ㄓㄥˋ", "歪": "ㄨㄞ", "氏": "ㄕˋ", "氧": "ㄧㄤˇ", "永": "ㄩㄥˇ", "水": "ㄕㄨㄟˇ", "氰": "ㄑㄧㄥ", "母": "ㄇㄨˇ", "沒": "ㄇㄛˋ", "殺": "ㄕㄚ", "汗": "ㄏㄢˋ", "沐": "ㄇㄨˋ", "沙": "ㄕㄚ", "法": "ㄈㄚˇ", "沸": "ㄈㄟˋ", "況": "ㄎㄨㄤˋ", "沖": "ㄔㄨㄥ", "注": "ㄓㄨˋ", "油": "ㄧㄡˊ", "洗": "ㄒㄧˇ", "派": "ㄆㄞˋ", "洞": "ㄉㄨㄥˋ", "流": "ㄌㄧㄡˊ", "治": "ㄓˋ", "海": "ㄏㄞˇ", "殖": "ㄓˊ", "求": "ㄑㄧㄡˊ", "涕": "ㄊㄧˋ", "浴": "ㄩˋ", "消": "ㄒㄧㄠ", "液": "ㄧㄝˋ", "泌": "ㄇㄧˋ", "渲": "ㄒㄩㄢˋ", "涼": "ㄌㄧㄤˊ", "泡": "ㄆㄠˋ", "減": "ㄐㄧㄢˇ", "混": "ㄏㄨㄣˋ", "淨": "ㄐㄧㄥˋ", "溢": "ㄧˋ", "渴": "ㄎㄜˇ", "源": "ㄩㄢˊ", "測": "ㄘㄜˋ", "汪": "ㄨㄤ", "清": "ㄑㄧㄥ", "淚": "ㄌㄟˋ", "滑": "ㄏㄨㄚˊ", "湊": "ㄘㄡˋ", "溶": "ㄖㄨㄥˊ", "滾": "ㄍㄨㄣˇ", "滯": "ㄓˋ", "活": "ㄏㄨㄛˊ", "溫": "ㄨㄣ", "洋": "ㄧㄤˊ", "滿": "ㄇㄢˇ", "炭": "ㄊㄢˋ", "潰": "ㄎㄨㄟˋ", "濕": "ㄕ", "漸": "ㄐㄧㄢˋ", "澡": "ㄗㄠˇ", "瀉": "ㄒㄧㄝˋ", "潤": "ㄖㄨㄣˋ", "潮": "ㄔㄠˊ", "濁": "ㄓㄨㄛˊ", "潔": "ㄐㄧㄝˊ", "炎": "ㄧㄢˊ", "灣": "ㄨㄢ", "濃": "ㄋㄨㄥˊ", "深": "ㄕㄣ", "準": "ㄓㄨㄣˇ", "炮": "ㄆㄠˊ", "滋": "ㄗ", "為": "ㄨㄟˊ", "烘": "ㄏㄨㄥ", "無": "ㄨˊ", "爪": "ㄓㄠˇ", "然": "ㄖㄢˊ", "焙": "ㄅㄟˋ", "牆": "ㄑㄧㄤˊ", "煮": "ㄓㄨˇ", "營": "ㄧㄥˊ", "烈": "ㄌㄧㄝˋ", "熟": "ㄕㄨˊ", "照": "ㄓㄠˋ", "爆": "ㄅㄠˋ", "牌": "ㄆㄞˊ", "烯": "ㄒㄧ", "爛": "ㄌㄢˋ", "焦": "ㄐㄧㄠ", "烴": "ㄊㄧㄥ", "激": "ㄐㄧ", "爾": "ㄦˇ", "片": "ㄆㄧㄢˋ", "熱": "ㄖㄜˋ", "煩": "ㄈㄢˊ", "率": "ㄕㄨㄞˋ", "燙": "ㄊㄤˋ", "珀": "ㄆㄛˋ", "燈": "ㄉㄥ", "犬": "ㄑㄩㄢˇ", "物": "ㄨˋ", "牧": "ㄇㄨˋ", "狗": "ㄍㄡˇ", "燒": "ㄕㄠ", "獨": "ㄉㄨˊ", "特": "ㄊㄜˋ", "牠": "ㄊㄚ", "狂": "ㄎㄨㄤˊ", "狀": "ㄓㄨㄤˋ", "牽": "ㄑㄧㄢ", "獸": "ㄕㄡˋ", "牛": "ㄋㄧㄡˊ", "珠": "ㄓㄨ", "玩": "ㄨㄢˋ", "牙": "ㄧㄚˊ", "理": "ㄌㄧˇ", "球": "ㄑㄧㄡˊ", "琥": "ㄏㄨˇ", "瓣": "ㄅㄢˋ", "甦": "ㄙㄨ", "瓜": "ㄍㄨㄚ", "珍": "ㄓㄣ", "環": "ㄏㄨㄢˊ", "甚": "ㄕㄣˋ", "用": "ㄩㄥˋ", "界": "ㄐㄧㄝˋ", "甲": "ㄐㄧㄚˇ", "由": "ㄧㄡˊ", "疥": "ㄐㄧㄝˋ", "異": "ㄧˋ", "畫": "ㄏㄨㄚˋ", "疫": "ㄧˋ", "產": "ㄔㄢˇ", "瓶": "ㄆㄧㄥˊ", "甩": "ㄕㄨㄞˇ", "生": "ㄕㄥ", "留": "ㄌㄧㄡˊ", "疼": "ㄊㄥˊ", "疏": "ㄕㄨ", "疹": "ㄓㄣˇ", "病": "ㄅㄧㄥˋ", "症": "ㄓㄥˋ", "瘓": "ㄏㄨㄢˋ", "登": "ㄉㄥ", "現": "ㄒㄧㄢˋ", "瘋": "ㄈㄥ", "瘤": "ㄌㄧㄡˊ", "癒": "ㄩˋ", "癌": "ㄧㄢˊ", "發": "ㄈㄚ", "癱": "ㄊㄢ", "盆": "ㄆㄣˊ", "痛": "ㄊㄨㄥˋ", "療": "ㄌㄧㄠˊ", "瘦": "ㄕㄡˋ", "目": "ㄇㄨˋ", "盤": "ㄆㄢˊ", "猝": "ㄘㄨˋ", "皆": "ㄐㄧㄝ", "百": "ㄅㄞˇ", "白": "ㄅㄞˊ", "當": "ㄉㄤ", "直": "ㄓˊ", "盲": "ㄇㄤˊ", "癢": "ㄧㄤˇ", "瘍": "ㄧㄤˊ", "省": "ㄕㄥˇ", "相": "ㄒㄧㄤ", "眼": "ㄧㄢˇ", "的": "ㄉㄜ˙", "看": "ㄎㄢˋ", "硫": "ㄌㄧㄡˊ", "眠": "ㄇㄧㄢˊ", "睡": "ㄕㄨㄟˋ", "睛": "ㄐㄧㄥ", "砂": "ㄕㄚ", "短": "ㄉㄨㄢˇ", "確": "ㄑㄩㄝˋ", "知": "ㄓ", "真": "ㄓㄣ", "磁": "ㄘˊ", "碰": "ㄆㄥˋ", "礎": "ㄔㄨˇ", "石": "ㄕˊ", "磺": "ㄏㄨㄤˊ", "磚": "ㄓㄨㄢ", "磨": "ㄇㄛˊ", "皮": "ㄆㄧˊ", "礙": "ㄞˋ", "禁": "ㄐㄧㄣˋ", "社": "ㄕㄜˋ", "種": "ㄓㄨㄥˇ", "示": "ㄑㄧˊ", "移": "ㄧˊ", "秘": "ㄇㄧˋ", "禽": "ㄑㄧㄣˊ", "禍": "ㄏㄨㄛˋ", "禦": "ㄩˋ", "碗": "ㄨㄢˇ", "積": "ㄐㄧ", "瞳": "ㄊㄨㄥˊ", "福": "ㄈㄨˊ", "科": "ㄎㄜ", "突": "ㄊㄨˊ", "窗": "ㄔㄨㄤ", "秀": "ㄒㄧㄡˋ", "窒": "ㄓˋ", "空": "ㄎㄨㄥ", "窩": "ㄨㄛ", "稱": "ㄔㄥ", "破": "ㄆㄛˋ", "硬": "ㄧㄥˋ", "穿": "ㄔㄨㄢ", "碎": "ㄙㄨㄟˋ", "神": "ㄕㄣˊ", "竭": "ㄐㄧㄝˊ", "節": "ㄐㄧㄝˊ", "築": "ㄓㄨˊ", "章": "ㄓㄤ", "精": "ㄐㄧㄥ", "箱": "ㄒㄧㄤ", "糖": "ㄊㄤˊ", "立": "ㄌㄧˋ", "端": "ㄉㄨㄢ", "籠": "ㄌㄨㄥˊ", "籽": "ㄗˇ", "算": "ㄙㄨㄢˋ", "糞": "ㄈㄣˋ", "糜": "ㄇㄧˊ", "第": "ㄉㄧˋ", "米": "ㄇㄧˇ", "糧": "ㄌㄧㄤˊ", "範": "ㄈㄢˋ", "答": "ㄉㄚˊ", "符": "ㄈㄨˊ", "筒": "ㄊㄨㄥˇ", "管": "ㄍㄨㄢˇ", "紅": "ㄏㄨㄥˊ", "級": "ㄐㄧˊ", "紮": "ㄓㄚ", "紙": "ㄓˇ", "絕": "ㄐㄩㄝˊ", "約": "ㄩㄝ", "絛": "ㄊㄠ", "紫": "ㄗˇ", "累": "ㄌㄟˇ", "紗": "ㄕㄚ", "等": "ㄉㄥˇ", "統": "ㄊㄨㄥˇ", "細": "ㄒㄧˋ", "綠": "ㄌㄩˋ", "終": "ㄓㄨㄥ", "經": "ㄐㄧㄥ", "素": "ㄙㄨˋ", "粉": "ㄈㄣˇ", "結": "ㄐㄧㄝˊ", "絲": "ㄙ", "維": "ㄨㄟˊ", "緒": "ㄒㄩˋ", "線": "ㄒㄧㄢˋ", "緊": "ㄐㄧㄣˇ", "網": "ㄨㄤˇ", "編": "ㄅㄧㄢ", "縫": "ㄈㄥˊ", "系": "ㄒㄧˋ", "繁": "ㄈㄢˊ", "納": "ㄋㄚˋ", "縱": "ㄗㄨㄥˋ", "緩": "ㄏㄨㄢˇ", "純": "ㄔㄨㄣˊ", "繫": "ㄒㄧˋ", "繞": "ㄖㄠˋ", "纖": "ㄒㄧㄢ", "給": "ㄍㄟˇ", "續": "ㄒㄩˋ", "縮": "ㄙㄨㄛ", "繃": "ㄅㄥ", "纏": "ㄔㄢˊ", "緣": "ㄩㄢˊ", "繼": "ㄐㄧˋ", "練": "ㄌㄧㄢˋ", "罰": "ㄈㄚˊ", "置": "ㄓˋ", "罵": "ㄇㄚˋ", "缺": "ㄑㄩㄝ", "緻": "ㄓˋ", "罐": "ㄍㄨㄢˋ", "繩": "ㄕㄥˊ", "考": "ㄎㄠˇ", "者": "ㄓㄜˇ", "翻": "ㄈㄢ", "美": "ㄇㄟˇ", "聲": "ㄕㄥ", "耍": "ㄕㄨㄚˇ", "而": "ㄦˊ", "老": "ㄌㄠˇ", "耐": "ㄋㄞˋ", "聞": "ㄨㄣˊ", "肉": "ㄖㄡˋ", "肥": "ㄈㄟˊ", "肪": "ㄈㄤˊ", "聽": "ㄊㄧㄥ", "肌": "ㄐㄧ", "肚": "ㄉㄨˋ", "聯": "ㄌㄧㄢˊ", "肝": "ㄍㄢ", "肛": "ㄍㄤ", "耳": "ㄦˇ", "習": "ㄒㄧˊ", "股": "ㄍㄨˇ", "育": "ㄩˋ", "胞": "ㄅㄠ", "肺": "ㄈㄟˋ", "胖": "ㄆㄤˋ", "胰": "ㄧˊ", "背": "ㄅㄟˋ", "群": "ㄑㄩㄣˊ", "胡": "ㄏㄨˊ", "胱": "ㄍㄨㄤ", "脈": "ㄇㄞˋ", "脊": "ㄐㄧˇ", "胃": "ㄨㄟˋ", "能": "ㄋㄥˊ", "耗": "ㄏㄠˋ", "脹": "ㄓㄤˋ", "胺": "ㄢ", "脆": "ㄘㄨㄟˋ", "腦": "ㄋㄠˇ", "腔": "ㄑㄧㄤ", "脂": "ㄓ", "腫": "ㄓㄨㄥˇ", "腎": "ㄕㄣˋ", "腰": "ㄧㄠ", "腥": "ㄒㄧㄥ", "腐": "ㄈㄨˇ", "脫": "ㄊㄨㄛ", "腸": "ㄔㄤˊ", "腹": "ㄈㄨˋ", "腿": "ㄊㄨㄟˇ", "腺": "ㄒㄧㄢˋ", "脅": "ㄒㄧㄝˊ", "腳": "ㄐㄧㄠˇ", "膚": "ㄈㄨ", "膜": "ㄇㄛˋ", "膠": "ㄐㄧㄠ", "膿": "ㄋㄨㄥˊ", "膩": "ㄋㄧˋ", "臉": "ㄌㄧㄢˇ", "膛": "ㄊㄤˊ", "臨": "ㄌㄧㄣˊ", "舀": "ㄧㄠˇ", "膽": "ㄉㄢˇ", "肢": "ㄓ", "自": "ㄗˋ", "舊": "ㄐㄧㄡˋ", "舒": "ㄕㄨ", "舔": "ㄊㄧㄢˇ", "臼": "ㄐㄧㄡˋ", "至": "ㄓˋ", "興": "ㄒㄧㄥ", "臺": "ㄊㄞˊ", "航": "ㄏㄤˊ", "臟": "ㄗㄤˋ", "色": "ㄙㄜˋ", "致": "ㄓˋ", "膀": "ㄅㄤˇ", "良": "ㄌㄧㄤˊ", "芳": "ㄈㄤ", "艾": "ㄞˋ", "花": "ㄏㄨㄚ", "苜": "ㄇㄨˋ", "苦": "ㄎㄨˇ", "舞": "ㄨˇ", "莊": "ㄓㄨㄤ", "茲": "ㄗ", "臭": "ㄔㄡˋ", "苗": "ㄇㄧㄠˊ", "苷": "ㄍㄢ", "茶": "ㄔㄚˊ", "菌": "ㄐㄩㄣˋ", "草": "ㄘㄠˇ", "若": "ㄖㄨㄛˋ", "萄": "ㄊㄠˊ", "與": "ㄩˇ", "莓": "ㄇㄟˊ", "菜": "ㄘㄞˋ", "荷": "ㄏㄜˊ", "般": "ㄅㄢ", "萬": "ㄨㄢˋ", "菲": "ㄈㄟˇ", "落": "ㄌㄨㄛˋ", "蒜": "ㄙㄨㄢˋ", "著": "ㄓㄜ˙", "葵": "ㄎㄨㄟˊ", "蒙": "ㄇㄥˊ", "葡": "ㄆㄨˊ", "葉": "ㄧㄝˋ", "蔽": "ㄅㄧˋ", "薄": "ㄅㄛˊ", "藏": "ㄘㄤˊ", "蓄": "ㄒㄩˋ", "蓬": "ㄆㄥˊ", "藥": "ㄧㄠˋ", "蓿": "ㄙㄨˋ", "蔔": "ㄅㄛˊ", "蘋": "ㄆㄧㄣˊ", "萎": "ㄨㄟ", "蓋": "ㄍㄞˋ", "英": "ㄧㄥ", "號": "ㄏㄠˋ", "虎": "ㄏㄨˇ", "蔥": "ㄘㄨㄥ", "蝕": "ㄕˊ", "蔬": "ㄕㄨ", "處": "ㄔㄨˇ", "蕉": "ㄐㄧㄠ", "蠕": "ㄖㄨㄢˇ", "蝨": "ㄕ", "蚤": "ㄗㄠˇ", "蚊": "ㄨㄣˊ", "衝": "ㄔㄨㄥ", "血": "ㄒㄧㄝˇ", "行": "ㄒㄧㄥˊ", "衡": "ㄏㄥˊ", "術": "ㄕㄨˋ", "蟲": "ㄔㄨㄥˊ", "萌": "ㄇㄥˊ", "衛": "ㄨㄟˋ", "被": "ㄅㄟˋ", "裡": "ㄌㄧˇ", "衰": "ㄕㄨㄞ", "褐": "ㄏㄜˊ", "裝": "ㄓㄨㄤ", "衣": "ㄧ", "蘿": "ㄌㄨㄛˊ", "補": "ㄅㄨˇ", "蛋": "ㄉㄢˋ", "表": "ㄅㄧㄠˇ", "西": "ㄒㄧ", "觀": "ㄍㄨㄢ", "規": "ㄍㄨㄟ", "覆": "ㄈㄨˋ", "見": "ㄐㄧㄢˋ", "裂": "ㄌㄧㄝˋ", "覺": "ㄐㄩㄝˊ", "視": "ㄕˋ", "角": "ㄐㄧㄠˇ", "訓": "ㄒㄩㄣˋ", "計": "ㄐㄧˋ", "設": "ㄕㄜˋ", "試": "ㄕˋ", "評": "ㄆㄧㄥˊ", "該": "ㄍㄞ", "言": "ㄧㄢˊ", "認": "ㄖㄣˋ", "記": "ㄐㄧˋ", "語": "ㄩˇ", "詢": "ㄒㄩㄣˊ", "訊": "ㄒㄩㄣˋ", "診": "ㄓㄣˇ", "誘": "ㄧㄡˋ", "論": "ㄌㄨㄣˋ", "要": "ㄧㄠˋ", "誤": "ㄨˋ", "解": "ㄐㄧㄝˇ", "議": "ㄧˋ", "複": "ㄈㄨˋ", "護": "ㄏㄨˋ", "警": "ㄐㄧㄥˇ", "謝": "ㄒㄧㄝˋ", "識": "ㄕˋ", "課": "ㄎㄜˋ", "證": "ㄓㄥˋ", "豐": "ㄈㄥ", "請": "ㄑㄧㄥˇ", "變": "ㄅㄧㄢˋ", "責": "ㄗㄜˊ", "貧": "ㄆㄧㄣˊ", "賣": "ㄇㄞˋ", "讀": "ㄉㄨˊ", "貴": "ㄍㄨㄟˋ", "豬": "ㄓㄨ", "貓": "ㄇㄠ", "負": "ㄈㄨˋ", "貼": "ㄊㄧㄝ", "趴": "ㄆㄚ", "趕": "ㄍㄢˇ", "諾": "ㄋㄨㄛˋ", "質": "ㄓˊ", "超": "ㄔㄠ", "趾": "ㄓˇ", "走": "ㄗㄡˇ", "踏": "ㄊㄚˋ", "足": "ㄗㄨˊ", "路": "ㄌㄨˋ", "踢": "ㄊㄧ", "跑": "ㄆㄠˇ", "跳": "ㄊㄧㄠˋ", "起": "ㄑㄧˇ", "譽": "ㄩˋ", "跺": "ㄉㄨㄛˋ", "身": "ㄕㄣ", "跟": "ㄍㄣ", "軀": "ㄑㄩ", "讓": "ㄖㄤˋ", "躁": "ㄗㄠˋ", "較": "ㄐㄧㄠˋ", "蹟": "ㄐㄧ", "躍": "ㄩㄝˋ", "躺": "ㄊㄤˇ", "迎": "ㄧㄥˊ", "輸": "ㄕㄨ", "輩": "ㄅㄟˋ", "迅": "ㄒㄩㄣˋ", "輔": "ㄈㄨˇ", "輪": "ㄌㄨㄣˊ", "軟": "ㄖㄨㄢˇ", "車": "ㄔㄜ", "辦": "ㄅㄢˋ", "轉": "ㄓㄨㄢˇ", "退": "ㄊㄨㄟˋ", "返": "ㄈㄢˇ", "近": "ㄐㄧㄣˋ", "迴": "ㄏㄨㄟˊ", "這": "ㄓㄜˋ", "逆": "ㄋㄧˋ", "送": "ㄙㄨㄥˋ", "造": "ㄗㄠˋ", "迷": "ㄇㄧˊ", "迫": "ㄆㄛˋ", "辨": "ㄅㄧㄢˋ", "透": "ㄊㄡˋ", "連": "ㄌㄧㄢˊ", "運": "ㄩㄣˋ", "通": "ㄊㄨㄥ", "遊": "ㄧㄡˊ", "遇": "ㄩˋ", "過": "ㄍㄨㄛˋ", "蹲": "ㄉㄨㄣ", "進": "ㄐㄧㄣˋ", "載": "ㄗㄞˋ", "輕": "ㄑㄧㄥ", "違": "ㄨㄟˊ", "道": "ㄉㄠˋ", "遭": "ㄗㄠ", "適": "ㄕˋ", "選": "ㄒㄩㄢˇ", "遲": "ㄔˊ", "邊": "ㄅㄧㄢ", "還": "ㄏㄨㄢˊ", "遮": "ㄓㄜ", "遠": "ㄩㄢˇ", "郁": "ㄩˋ", "酵": "ㄒㄧㄠˋ", "達": "ㄉㄚˊ", "避": "ㄅㄧˋ", "都": "ㄉㄨ", "速": "ㄙㄨˋ", "酪": "ㄌㄨㄛˋ", "週": "ㄓㄡ", "那": "ㄋㄚˋ", "酶": "ㄇㄟˊ", "酚": "ㄈㄣ", "醇": "ㄔㄨㄣˊ", "醉": "ㄗㄨㄟˋ", "酸": "ㄙㄨㄢ", "量": "ㄌㄧㄤˋ", "重": "ㄓㄨㄥˋ", "醒": "ㄒㄧㄥˇ", "醯": "ㄒㄧ", "野": "ㄧㄝˇ", "醫": "ㄧ", "金": "ㄐㄧㄣ", "針": "ㄓㄣ", "釋": "ㄕˋ", "鈍": "ㄉㄨㄣˋ", "部": "ㄅㄨˋ", "配": "ㄆㄟˋ", "錯": "ㄘㄨㄛˋ", "鋪": "ㄆㄨ", "鋼": "ㄍㄤ", "鈣": "ㄍㄞˋ", "鈉": "ㄋㄚˋ", "鍰": "ㄏㄨㄢˊ", "銳": "ㄖㄨㄟˋ", "錢": "ㄑㄧㄢˊ", "酷": "ㄎㄨˋ", "鍵": "ㄐㄧㄢˋ", "鑑": "ㄐㄧㄢˋ", "鐵": "ㄊㄧㄝˇ", "鈕": "ㄋㄧㄡˇ", "門": "ㄇㄣˊ", "間": "ㄐㄧㄢ", "鐘": "ㄓㄨㄥ", "鑽": "ㄗㄨㄢ", "鏡": "ㄐㄧㄥˋ", "長": "ㄔㄤˊ", "阻": "ㄗㄨˇ", "鉀": "ㄐㄧㄚˇ", "除": "ㄔㄨˊ", "開": "ㄎㄞ", "醛": "ㄑㄩㄢˊ", "防": "ㄈㄤˊ", "限": "ㄒㄧㄢˋ", "閱": "ㄩㄝˋ", "降": "ㄐㄧㄤˋ", "關": "ㄍㄨㄢ", "院": "ㄩㄢˋ", "隔": "ㄍㄜˊ", "陰": "ㄧㄣ", "陷": "ㄒㄧㄢˋ", "隨": "ㄙㄨㄟˊ", "險": "ㄒㄧㄢˇ", "隙": "ㄒㄧˋ", "陽": "ㄧㄤˊ", "隻": "ㄓ", "雙": "ㄕㄨㄤ", "靜": "ㄐㄧㄥˋ", "音": "ㄧㄣ", "難": "ㄋㄢˊ", "閉": "ㄅㄧˋ", "鞋": "ㄒㄧㄝˊ", "霉": "ㄇㄟˊ", "面": "ㄇㄧㄢˋ", "電": "ㄉㄧㄢˋ", "需": "ㄒㄩ", "雷": "ㄌㄟˊ", "陪": "ㄆㄟˊ", "頂": "ㄉㄧㄥˇ", "非": "ㄈㄟ", "鞭": "ㄅㄧㄢ", "闊": "ㄎㄨㄛˋ", "須": "ㄒㄩ", "雞": "ㄐㄧ", "霍": "ㄏㄨㄛˋ", "離": "ㄌㄧˊ", "頌": "ㄙㄨㄥˋ", "隱": "ㄧㄣˇ", "預": "ㄩˋ", "頻": "ㄆㄧㄣˊ", "障": "ㄓㄤˋ", "領": "ㄌㄧㄥˇ", "顎": "ㄜˋ", "顱": "ㄌㄨˊ", "頰": "ㄐㄧㄚˊ", "題": "ㄊㄧˊ", "頭": "ㄊㄡˊ", "顧": "ㄍㄨˋ", "顆": "ㄎㄜ", "顯": "ㄒㄧㄢˇ", "類": "ㄌㄟˋ", "食": "ㄕˊ", "零": "ㄌㄧㄥˊ", "風": "ㄈㄥ", "頒": "ㄅㄢ", "露": "ㄌㄨˋ", "養": "ㄧㄤˇ", "飼": "ㄙˋ", "餓": "ㄜˋ", "飯": "ㄈㄢˋ", "餘": "ㄩˊ", "餌": "ㄦˇ", "願": "ㄩㄢˋ", "頁": "ㄒㄧㄝˊ", "館": "ㄍㄨㄢˇ", "餐": "ㄘㄢ", "香": "ㄒㄧㄤ", "體": "ㄊㄧˇ", "首": "ㄕㄡˇ", "骨": "ㄍㄨˇ", "騰": "ㄊㄥˊ", "響": "ㄒㄧㄤˇ", "驗": "ㄧㄢˋ", "驟": "ㄗㄡˋ", "驚": "ㄐㄧㄥ", "髒": "ㄗㄤ", "驅": "ㄑㄩ", "骼": "ㄍㄜˊ", "馬": "ㄇㄚˇ", "髖": "ㄎㄨㄢ", "鬍": "ㄏㄨˊ", "飽": "ㄅㄠˇ", "鬧": "ㄋㄠˋ", "飢": "ㄐㄧ", "鬚": "ㄒㄩ", "飲": "ㄧㄣˇ", "魚": "ㄩˊ", "飄": "ㄆㄧㄠ", "髓": "ㄙㄨㄟˇ", "鳴": "ㄇㄧㄥˊ", "鬆": "ㄙㄨㄥ", "鹼": "ㄐㄧㄢˇ", "麼": "ㄇㄜ˙", "麻": "ㄇㄚˊ", "餵": "ㄨㄟˋ", "鳥": "ㄋㄧㄠˇ", "鹽": "ㄧㄢˋ", "鬱": "ㄩˋ", "黴": "ㄇㄟˊ", "鮮": "ㄒㄧㄢ", "點": "ㄉㄧㄢˇ", "黃": "ㄏㄨㄤˊ", "黑": "ㄏㄟ", "麵": "ㄇㄧㄢˋ", "黏": "ㄋㄧㄢˊ", "鼠": "ㄕㄨˇ", "齡": "ㄌㄧㄥˊ", "齊": "ㄑㄧˊ", "齒": "ㄔˇ", "高": "ㄍㄠ", "鼓": "ㄍㄨˇ", "鼻": "ㄅㄧˊ", "卟": "ㄅㄨˇ", "啉": "ㄌㄧㄣˊ", "曬": "ㄕㄞˋ", "污": "ㄨ", "萜": "ㄊㄧㄝ"};
+const ZHUYIN_PHRASES = {"不得不": ["ㄅㄨˋ", "ㄉㄜˊ", "ㄅㄨˋ"], "狂犬病": ["ㄎㄨㄤˊ", "ㄑㄩㄢˇ", "ㄅㄧㄥˋ"], "雙層毛": ["ㄕㄨㄤ", "ㄘㄥˊ", "ㄇㄠˊ"], "大小便": ["ㄉㄚˋ", "ㄒㄧㄠˇ", "ㄅㄧㄢˋ"], "定點大小便": ["ㄉㄧㄥˋ", "ㄉㄧㄢˇ", "ㄉㄚˋ", "ㄒㄧㄠˇ", "ㄅㄧㄢˋ"], "打晶片": ["ㄉㄚˇ", "ㄐㄧㄥ", "ㄆㄧㄢˋ"], "垃圾桶": ["ㄌㄜˋ", "ㄙㄜˋ", "ㄊㄨㄥˇ"], "垃圾": ["ㄌㄜˋ", "ㄙㄜˋ"], "便宜": ["ㄆㄧㄢˊ", "ㄧˊ"], "因為": ["ㄧㄣ", "ㄨㄟˋ"], "為了": ["ㄨㄟˋ", "ㄌㄜ˙"], "行為": ["ㄒㄧㄥˊ", "ㄨㄟˊ"], "成為": ["ㄔㄥˊ", "ㄨㄟˊ"], "成長": ["ㄔㄥˊ", "ㄓㄤˇ"], "生長": ["ㄕㄥ", "ㄓㄤˇ"], "長大": ["ㄓㄤˇ", "ㄉㄚˋ"], "長期": ["ㄔㄤˊ", "ㄑㄧ"], "長毛": ["ㄔㄤˊ", "ㄇㄠˊ"], "晶片": ["ㄐㄧㄥ", "ㄆㄧㄢˋ"], "結紮": ["ㄐㄧㄝˊ", "ㄓㄚ"], "便便": ["ㄅㄧㄢˋ", "ㄅㄧㄢˋ"], "乾糧": ["ㄍㄢ", "ㄌㄧㄤˊ"], "餅乾": ["ㄅㄧㄥˇ", "ㄍㄢ"], "吹乾": ["ㄔㄨㄟ", "ㄍㄢ"], "烘乾": ["ㄏㄨㄥ", "ㄍㄢ"], "乾淨": ["ㄍㄢ", "ㄐㄧㄥˋ"], "養得起": ["ㄧㄤˇ", "ㄉㄜ˙", "ㄑㄧˇ"], "跑得快": ["ㄆㄠˇ", "ㄉㄜ˙", "ㄎㄨㄞˋ"], "認得": ["ㄖㄣˋ", "ㄉㄜ˙"], "記得": ["ㄐㄧˋ", "ㄉㄜ˙"], "覺得": ["ㄐㄩㄝˊ", "ㄉㄜ˙"], "懂得": ["ㄉㄨㄥˇ", "ㄉㄜ˙"], "看醫生": ["ㄎㄢˋ", "ㄧ", "ㄕㄥ"], "看獸醫": ["ㄎㄢˋ", "ㄕㄡˋ", "ㄧ"]};
+
+const SORTED_PHRASE_KEYS = Object.keys(ZHUYIN_PHRASES).sort((a, b) => b.length - a.length);
+
+function formatZhuyinChar(char, bpm) {
+  if (!bpm) return char;
+  
+  let tone = 1;
+  let symbols = bpm;
+  
+  if (bpm.startsWith('˙')) {
+    tone = 5;
+    symbols = bpm.slice(1);
+  } else if (bpm.endsWith('˙')) {
+    tone = 5;
+    symbols = bpm.slice(0, -1);
+  } else if (bpm.endsWith('ˊ')) {
+    tone = 2;
+    symbols = bpm.slice(0, -1);
+  } else if (bpm.endsWith('ˇ')) {
+    tone = 3;
+    symbols = bpm.slice(0, -1);
+  } else if (bpm.endsWith('ˋ')) {
+    tone = 4;
+    symbols = bpm.slice(0, -1);
+  }
+  
+  let symSpans = '';
+  if (tone === 5) {
+    symSpans += '<span class="zy-light">˙</span>';
+  }
+  for (let i = 0; i < symbols.length; i++) {
+    symSpans += '<span>' + symbols[i] + '</span>';
+  }
+  
+  let toneSpan = '';
+  if (tone === 2) {
+    toneSpan = '<span class="tone tone-2">ˊ</span>';
+  } else if (tone === 3) {
+    toneSpan = '<span class="tone tone-3">ˇ</span>';
+  } else if (tone === 4) {
+    toneSpan = '<span class="tone tone-4">ˋ</span>';
+  }
+  
+  return '<span class="zy-w"><span class="zy-c">' + char + '</span><span class="zy-r" aria-hidden="true"><span class="zy-b">' + symSpans + '</span><span class="zy-t">' + toneSpan + '</span></span></span>';
+}
+
+function zhuyinifyText(text) {
+  if (!text) return text;
+  
+  let result = '';
+  let i = 0;
+  const len = text.length;
+  
+  while (i < len) {
+    let matchedPhrase = false;
+    for (let p = 0; p < SORTED_PHRASE_KEYS.length; p++) {
+      const phrase = SORTED_PHRASE_KEYS[p];
+      if (text.startsWith(phrase, i)) {
+        const bpms = ZHUYIN_PHRASES[phrase];
+        for (let k = 0; k < phrase.length; k++) {
+          result += formatZhuyinChar(phrase[k], bpms[k]);
+        }
+        i += phrase.length;
+        matchedPhrase = true;
+        break;
+      }
+    }
+    if (matchedPhrase) continue;
+    
+    const ch = text[i];
+    if (/[\u4e00-\u9fa5]/.test(ch)) {
+      const bpm = ZHUYIN_DICT[ch];
+      result += formatZhuyinChar(ch, bpm);
+    } else {
+      result += ch;
+    }
+    i++;
+  }
+  return result;
+}
+
+function zhuyinify(input) {
+  if (!input || typeof input !== 'string') return input;
+  const parts = input.split(/(<[^>]+>)/g);
+  return parts.map(part => {
+    if (part.startsWith('<') && part.endsWith('>')) {
+      return part;
+    }
+    return zhuyinifyText(part);
+  }).join('');
+}
+
+// Test
+const testStr = '💡 <strong>小知識</strong>：雙層毛狗狗不怕冷，短毛犬或老狗才需要穿保暖衣服。';
+print('Result test length: ' + zhuyinify(testStr).length);
+print('Starts with: ' + zhuyinify(testStr).substring(0, 150));
+
+
+function zhuyinifyNode(node) {
+  if (!node || node.nodeType !== Node.TEXT_NODE) return;
+  const text = node.nodeValue;
+  if (!text || !/[\u4e00-\u9fa5]/.test(text)) return;
+  const parent = node.parentElement;
+  if (!parent) return;
+  if (parent.closest('.zy-w') || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.tagName === 'INPUT' || parent.tagName === 'TEXTAREA') return;
+
+  const temp = document.createElement('span');
+  temp.innerHTML = zhuyinify(text);
+  
+  const frag = document.createDocumentFragment();
+  while (temp.firstChild) {
+    frag.appendChild(temp.firstChild);
+  }
+  node.replaceWith(frag);
+}
+
+function zhuyinifyElement(root) {
+  if (!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+  const nodes = [];
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const parent = node.parentElement;
+    if (parent && (parent.closest('.zy-w') || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.tagName === 'INPUT' || parent.tagName === 'TEXTAREA')) {
+      continue;
+    }
+    if (/[\u4e00-\u9fa5]/.test(node.nodeValue)) {
+      nodes.push(node);
+    }
+  }
+  nodes.forEach(zhuyinifyNode);
+}
+
+function initZhuyinMode() {
+  const saved = localStorage.getItem('pet_zhuyin_mode');
+  // 依使用者指示：預設開啟
+  const isOff = (saved === 'off');
+  if (isOff) {
+    document.body.classList.add('zhuyin-off');
+    updateZhuyinButtonUI(false);
+  } else {
+    document.body.classList.remove('zhuyin-off');
+    updateZhuyinButtonUI(true);
+  }
+}
+
+function toggleZhuyinMode() {
+  const isCurrentlyOff = document.body.classList.contains('zhuyin-off');
+  if (isCurrentlyOff) {
+    document.body.classList.remove('zhuyin-off');
+    localStorage.setItem('pet_zhuyin_mode', 'on');
+    updateZhuyinButtonUI(true);
+  } else {
+    document.body.classList.add('zhuyin-off');
+    localStorage.setItem('pet_zhuyin_mode', 'off');
+    updateZhuyinButtonUI(false);
+  }
+}
+
+function updateZhuyinButtonUI(isOn) {
+  const label = document.getElementById('ui-zhuyin-label');
+  if (label) {
+    label.innerText = isOn ? '注音：開啟' : '注音：關閉';
+  }
+}
+
+    // =========================================================================
+    // Web Audio API 動物擬真聲學合成引擎 (100% 離線純合成)
+    // =========================================================================
+    const SoundFX = {
+      ctx: null,
+      init() {
+        if (!this.ctx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) this.ctx = new AudioContextClass();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      },
+      playDogBark() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        [0, 0.14].forEach((delay) => {
+          const t = now + delay;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(380, t);
+          osc.frequency.exponentialRampToValueAtTime(140, t + 0.1);
+          gain.gain.setValueAtTime(0, t);
+          gain.gain.linearRampToValueAtTime(0.35, t + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.11);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.12);
+        });
+      },
+      playDogWhimper() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        const osc1 = this.ctx.createOscillator();
+        const gain1 = this.ctx.createGain();
+        osc1.type = 'triangle';
+        osc1.frequency.setValueAtTime(680, now);
+        osc1.frequency.exponentialRampToValueAtTime(320, now + 0.18);
+        gain1.gain.setValueAtTime(0, now);
+        gain1.gain.linearRampToValueAtTime(0.28, now + 0.03);
+        gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
+        osc1.connect(gain1);
+        gain1.connect(this.ctx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.19);
+
+        const osc2 = this.ctx.createOscillator();
+        const gain2 = this.ctx.createGain();
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(750, now + 0.12);
+        osc2.frequency.linearRampToValueAtTime(820, now + 0.24);
+        osc2.frequency.exponentialRampToValueAtTime(360, now + 0.55);
+        gain2.gain.setValueAtTime(0, now + 0.12);
+        gain2.gain.linearRampToValueAtTime(0.3, now + 0.18);
+        gain2.gain.exponentialRampToValueAtTime(0.01, now + 0.55);
+        osc2.connect(gain2);
+        gain2.connect(this.ctx.destination);
+        osc2.start(now + 0.12);
+        osc2.stop(now + 0.56);
+      },
+      playCatMeow() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        const filter = this.ctx.createBiquadFilter();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(820, now + 0.2);
+        osc.frequency.exponentialRampToValueAtTime(420, now + 0.58);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(1100, now);
+        filter.Q.setValueAtTime(3.8, now);
+
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.26, now + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.6);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.62);
+      },
+      playRabbitSqueak() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        [0, 0.12].forEach((delay) => {
+          const t = now + delay;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(1200, t);
+          osc.frequency.exponentialRampToValueAtTime(1800, t + 0.06);
+          osc.frequency.exponentialRampToValueAtTime(900, t + 0.1);
+          gain.gain.setValueAtTime(0, t);
+          gain.gain.linearRampToValueAtTime(0.2, t + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.1);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.11);
+        });
+      },
+      playHamsterSqueak() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        [0, 0.08, 0.16].forEach((delay) => {
+          const t = now + delay;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(2200, t);
+          osc.frequency.exponentialRampToValueAtTime(1600, t + 0.05);
+          gain.gain.setValueAtTime(0, t);
+          gain.gain.linearRampToValueAtTime(0.22, t + 0.01);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.06);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.07);
+        });
+      },
+      playBirdChirp() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        [0, 0.1, 0.2].forEach((delay) => {
+          const t = now + delay;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(2800, t);
+          osc.frequency.linearRampToValueAtTime(3600, t + 0.04);
+          osc.frequency.exponentialRampToValueAtTime(2400, t + 0.08);
+          gain.gain.setValueAtTime(0, t);
+          gain.gain.linearRampToValueAtTime(0.18, t + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.08);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.09);
+        });
+      },
+      playCorrectChime() {
+        this.init();
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0, now + idx * 0.08);
+          gain.gain.linearRampToValueAtTime(0.2, now + idx * 0.08 + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.35);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.36);
+        });
+      }
+    };
+
+    function playEasterPet(type, el) {
+      SoundFX.init();
+      if (el) {
+        el.classList.remove('bounce');
+        void el.offsetWidth;
+        el.classList.add('bounce');
+      }
+      if (type === 'dog') SoundFX.playDogBark();
+      else if (type === 'cat') SoundFX.playCatMeow();
+      else if (type === 'rabbit') SoundFX.playRabbitSqueak();
+      else if (type === 'hamster') SoundFX.playHamsterSqueak();
+      else if (type === 'bird') SoundFX.playBirdChirp();
+      else if (type === 'all') {
+        SoundFX.playDogBark();
+        setTimeout(() => SoundFX.playCatMeow(), 250);
+        setTimeout(() => SoundFX.playHamsterSqueak(), 550);
+      }
+    }
+
+    // =========================================================================
+    // 專業獸醫題庫（四大物種全部滿編 7 關考驗，共 28 道經典題目）
+    // =========================================================================
+    const QUIZ_DATABASE = {
+      "dog": [
+            {
+                  "year": 1,
+                  "emoji": "🌙",
+                  "text": "小狗半夜哭鬧，可以關陽台處罰牠嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "剛離乳小狗缺乏安全感，處罰只會加劇恐懼焦慮！應用溫柔陪伴引導。"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🍫",
+                  "text": "狗狗該吃哪種食物才健康？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🥗",
+                              "label": "狗飼料與乾淨水",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🍫",
+                              "label": "巧克力與剩菜",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "巧克力可可鹼與洋蔥皆具致命劇毒！剩菜高油高鹽易誘發急性胰臟炎！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🦮",
+                  "text": "帶狗狗出門散步，一定要繫牽繩嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "牽繩是守護生命第一道防線！能防暴衝車禍、防走失與防誤食毒餌。"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🏥",
+                  "text": "狗狗不用打疫苗和結紮，能省錢？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "狂犬病是法定強制疫苗！結紮能預防老年致命子宮蓄膿與生殖道腫瘤。"
+            },
+            {
+                  "year": 8,
+                  "emoji": "🎒",
+                  "text": "補習回家好累，狗狗想找你玩，該？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🦮",
+                              "label": "抽空陪牠玩耍",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "📱",
+                              "label": "大罵走開滑手機",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "嗅聞散步是犬類血清素平衡的重要基礎，每天放電能預防憂鬱與吠叫！"
+            },
+            {
+                  "year": 11,
+                  "emoji": "📦",
+                  "text": "搬家房東不給養，可以把老狗丟掉嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "惡意棄養違法且重罰！家人生活改變，飼主責任仍永久存續！"
+            },
+            {
+                  "year": 15,
+                  "emoji": "🌈",
+                  "text": "老狗生病走不動了，要陪伴牠到最後？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "陪伴至生命最後一刻，是飼主能給毛孩最深情、最崇高的守護承諾！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🚗",
+                  "text": "大熱天可以把狗單獨留在車子裡嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "高溫密閉車廂只需15分鐘就足以造成熱衰竭與不可逆腦損傷死亡！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🦟",
+                  "text": "狗狗每個月都要吃心絲蟲預防藥嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "心絲蟲由蚊子叮咬傳播，幼蟲鑽入心臟肺動脈會引發致命衰竭，預防勝於治療！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🦴",
+                  "text": "吃剩的尖銳雞骨頭，可以丟給狗啃嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "熟禽鳥骨頭容易縱向碎裂成尖刺，會刺穿食道、胃部引發急性腹膜炎致命！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🏷️",
+                  "text": "養狗狗依法一定要打晶片並登記嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "【法律強制規定】依法毛孩出生日起四個月內必須完成晶片植入與寵物登記！晶片就像終生身分證，大幅提高走失協尋率；未依規定登記者，依法可處最高新臺幣一萬五千元罰鍰！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🍇",
+                  "text": "葡萄或葡萄乾，可以拿來餵狗狗嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "極微量的葡萄或葡萄乾即可造成狗狗急性無尿性腎衰竭，數天內致命！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🕷️",
+                  "text": "草叢跑跳回家後，要檢查有沒有壁蝨？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "壁蝨叮咬會傳播焦蟲與艾利希體等致命血液寄生蟲，回家應落實梳毛檢查！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "👂",
+                  "text": "狗狗一直抓耳朵甩頭，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏥",
+                              "label": "帶給獸醫檢查",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🪄",
+                              "label": "拿棉花棒用力戳",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "拿棉花棒亂戳會將耳垢推更深或戳破耳膜！應就醫檢查並使用專用清耳液！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "💊",
+                  "text": "狗狗發燒，可以吃人類的普拿疼嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "普拿疼（乙醯胺酚）對犬貓具強烈致命毒性，會引發急性溶血與肝衰竭死亡！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "✂️",
+                  "text": "狗狗指甲太長倒插，要定期修剪嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "過長指甲會改變骨骼受力角度造成關節炎，定期修剪是基本生活護理！"
+            },
+            {
+                  "year": 7,
+                  "emoji": "🦷",
+                  "text": "狗狗牙齒黃又嘴臭，不管牠沒關係？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "嚴重牙周病細菌會隨微血管侵蝕心臟瓣膜與腎臟，必須定期刷牙與洗牙！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🎆",
+                  "text": "打雷放鞭炮狗狗嚇得發抖，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🛋️",
+                              "label": "抱抱溫柔安撫",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🪟",
+                              "label": "抓去窗邊練膽量",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "強迫暴露只會加深恐懼創傷！提供昏暗安全的掩護窩是減緩焦慮的良方。"
+            },
+            {
+                  "year": 1,
+                  "emoji": "👟",
+                  "text": "小狗愛亂咬拖鞋，該怎麼做？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🧸",
+                              "label": "給耐咬玩具玩",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "👋",
+                              "label": "用力打嘴巴處罰",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "啃咬是換牙期的正常生理發癢，提供專屬潔牙骨或磨牙玩具才能治本！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "💩",
+                  "text": "狗狗在路上便便，主人要自己清理？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "隨手清狗便不只是公德心，更能杜絕梨形鞭毛蟲與寄生蟲卵擴散傳染！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🥑",
+                  "text": "酪梨（牛油果）可以拿來餵狗狗吃嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "酪梨葉片與果肉含酪梨素（Persin），且大型果核極易造成食道急性窒息！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "⚖️",
+                  "text": "狗狗太胖快走不動了，主人應該？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🥣",
+                              "label": "幫牠減肥控熱量",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🍖",
+                              "label": "繼續狂餵肉乾零食",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "肥胖會大幅加重心血管負擔與退化性關節炎，定時定量飲食能延長毛孩壽命！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "👁️",
+                  "text": "狗狗眼睛常有黃綠眼屎，該看醫生嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "黃綠色分泌物代表角膜潰瘍或細菌性結膜炎感染，延誤可能造成角膜穿孔失明！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🧴",
+                  "text": "可以把人用的防蚊液直接噴在狗身上？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "DEET成分會被犬類皮膚吸收並在舔毛時食入，引發嘔吐、抽搐等神經中毒！"
+            },
+            {
+                  "year": 10,
+                  "emoji": "🧊",
+                  "text": "老狗走路常打滑，磁磚要鋪防滑墊嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "防滑地墊能減輕老犬關節與脊椎負擔，防止滑倒髖關節脫臼骨折！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🍬",
+                  "text": "狗狗偷吃無糖口香糖，會怎麼樣？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🚨",
+                              "label": "會中毒有生命危險",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "😊",
+                              "label": "只是嘴巴變香沒事",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "木糖醇會刺激犬胰臟爆量釋放胰島素，引發休克低血糖與致命性急性肝衰竭！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "🌪️",
+                  "text": "狗狗剛吃飽飯，可以馬上抓去劇烈跑？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "剛吃飽激烈跑跳極易引發致命「急性胃扭轉（GDV）」，需數小時內緊急開刀！"
+            },
+            {
+                  "year": 8,
+                  "emoji": "🧥",
+                  "text": "冬天好冷，家裡的狗狗需要穿衣服嗎？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "👕",
+                              "label": "看情況（短毛老狗才穿）",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🥶",
+                              "label": "一律都不用穿",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【視情境與體質】短毛、高齡、消瘦或關節炎病犬外出時需要穿衣防失溫；但雙層長毛犬（如哈士奇）或在溫暖室內穿衣服，反而會散熱不良悶出濕疹！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "💉",
+                  "text": "小狗剛打完疫苗當天，可以馬上洗澡？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "疫苗施打後免疫系統正在建立抗體，洗澡容易著涼感冒，建議一週後再洗！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🩸",
+                  "text": "狗狗吐拉血水、肚子劇痛，該送急診？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "腥臭血便常是出血性胃腸炎或致命性犬病毒性腸炎，必須立刻住院輸液搶救！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🐾",
+                  "text": "狗狗狂舔腳趾甚至紅腫發炎，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏥",
+                              "label": "帶給獸醫檢查治療",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🧼",
+                              "label": "覺得愛乾淨不管牠",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "頻繁舔腳是指間膿皮症或異位性皮膚炎典型警訊，濕悶會導致細菌黴菌孳生！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🌊",
+                  "text": "去海邊玩，可以讓狗狗大口喝海水嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "海水含高濃度鹽分，過量飲用會造成急性高血鈉症、嚴重脫水甚至腦水腫致死！"
+            },
+            {
+                  "year": 7,
+                  "emoji": "🐕",
+                  "text": "散步遇到別隻狗狗，可以直接衝過去玩？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🤝",
+                              "label": "不行，要先問主人",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🏃",
+                              "label": "可以，直接衝過去",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【尊重情境與空間】並非每隻狗狗都社會化良好或健康無傳染病！必須先徵詢對方飼主同意，確認雙方情緒放鬆，切勿直接放任衝撞引發打架咬傷！"
+            },
+            {
+                  "year": 9,
+                  "emoji": "🦯",
+                  "text": "老狗眼睛白白混濁常撞到，是生病了？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "白內障與水晶體核硬化需專業眼科裂隙燈確診，居家應維持家具固定不隨意變動！"
+            },
+            {
+                  "year": 15,
+                  "emoji": "❤️",
+                  "text": "狗狗一輩子只有你，你願意陪伴牠一生？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "真正的飼主責任，就是無論生命是風光明媚還是老病殘弱，都相伴到底！"
+            }
+      ],
+      "cat": [
+            {
+                  "year": 1,
+                  "emoji": "🪟",
+                  "text": "養貓高樓窗戶，一定要裝防墜安全網？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓咪好奇心強，紗窗沒防護極易墜樓粉碎性骨折！安全防墜網是第一責任！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "💧",
+                  "text": "貓咪不愛喝水，要多準備乾淨水碗嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "水分攝取充足是預防特發性膀胱炎與致命尿道結石最核心的照護習慣！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "💐",
+                  "text": "貓咪肚子餓了，應該給牠吃什麼？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🥫",
+                              "label": "貓飼料與貓罐頭",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "💐",
+                              "label": "百合花與生豬肉",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "百合花全株對貓咪皆為致命劇毒！舔一口花粉都會引發急性腎衰竭死掉！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "🛋️",
+                  "text": "貓咪抓沙發，可以直接手術切除指甲？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "殘酷去爪手術等於切除手指第一節骨頭！應提供多種抓板並定期修剪指尖！"
+            },
+            {
+                  "year": 8,
+                  "emoji": "👶",
+                  "text": "家裡生了小寶寶，就要把貓咪送走嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "貓咪不是玩具！只要做好定期驅蟲清潔，毛孩和小朋友能幸福共存！"
+            },
+            {
+                  "year": 12,
+                  "emoji": "🤢",
+                  "text": "貓咪常常嘔吐毛球，該如何照護？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🪮",
+                              "label": "每天梳毛給化毛粉",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "😴",
+                              "label": "以為正常不管牠",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "毛球堆積會引發致命腸道阻塞！定期梳毛是預防腸胃阻塞的關鍵！"
+            },
+            {
+                  "year": 16,
+                  "emoji": "🩺",
+                  "text": "老貓腎臟不好，要耐心餵水定期回診？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "老年慢性腎病照護需要滿滿耐心，你的不離不棄是牠一生的幸福。"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🥛",
+                  "text": "貓咪口渴，可以喝人類常喝的鮮奶嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "多數成貓體內缺乏乳糖酶，喝鮮奶會引發乳糖不耐症劇烈腹瀉脫水！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🚽",
+                  "text": "家裡貓砂盆數量，最好是「貓隻數＋1」？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "提供足夠且乾淨的砂盆能給貓咪地盤安全感，有效預防憋尿與亂尿尿！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🧅",
+                  "text": "貓咪可以吃洋蔥、大蒜或蔥花嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "蔥蒜類含硫代硫酸鹽，會破壞貓咪紅血球導致急性溶血性貧血與血紅素尿！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🚽",
+                  "text": "公貓蹲砂盆用力哀鳴尿不出來，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🚑",
+                              "label": "立刻送動物醫院急診",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "⏳",
+                              "label": "等到明天再看看",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "尿道完全阻塞24~48小時即會引發急性尿毒症與高血鉀心臟驟停，是第一等急症！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🥦",
+                  "text": "貓咪可以跟著主人一起吃全素食嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "貓咪為嚴格肉食動物，體內無法自行合成牛磺酸與花生四烯酸，吃素會失明心衰竭！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🐈",
+                  "text": "可以抓貓咪尾巴倒吊提起來嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "尾骨與脊髓神經相連，拉扯尾巴會導致神經拉傷、後軀癱瘓甚至終身大小便失禁！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "📦",
+                  "text": "貓咪喜歡鑽紙箱，是因為有安全感嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "箱子具有遮蔽與保暖效果，能大幅降低貓咪在開闊環境中的緊繃壓力！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🌿",
+                  "text": "家裡點茶樹精油水氧機，對貓咪有毒？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓咪肝臟缺乏葡萄糖醛酸轉移酶，無法代謝酚類萜烯化合物，吸入易肝中毒！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "✂️",
+                  "text": "貓咪結紮手術前，一定要禁食禁水嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "禁食禁水能防止麻醉放鬆時胃內容物逆流嘔吐，造成吸入性肺炎窒息！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🪱",
+                  "text": "貓咪在地上磨屁股走路，可能是生病了？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "屁屁摩擦拖行常見於肛門囊發炎腫脹或感染跳蚤叮咬帶來的絛蟲，需就醫驅蟲！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🧶",
+                  "text": "毛線和針線可以隨便丟給貓咪咬著玩嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "線狀異物吞入腸道會像抽繩一樣割破腸壁造成致命腹膜炎，絕不可任其玩耍！"
+            },
+            {
+                  "year": 7,
+                  "emoji": "👄",
+                  "text": "貓咪嘴巴紅腫流口水又好臭，是生病了？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓慢性口炎會造成劇烈疼痛難以進食，需定期就醫接受消炎與口腔拔牙治療！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🌳",
+                  "text": "可以帶家裡的貓咪去公園散步放風嗎？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏡",
+                              "label": "不用，大部分貓會怕",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🌲",
+                              "label": "要，天天去公園",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【性格與極高應激風險】貓咪領域性極強，戶外突發犬吠或車聲易引發暴衝走失或致命應激休克！除非從小受過極為嚴格的減敏訓練並使用防掙脫工字牽繩，否則室內豐富化環境最安全！"
+            },
+            {
+                  "year": 8,
+                  "emoji": "👁️",
+                  "text": "貓咪兩隻眼睛瞳孔一大一小，很危險？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兩側瞳孔大小不一致（Anisocoria）常提示顱內病變或霍納氏症候群，需即刻就醫！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🪵",
+                  "text": "貓咪天生愛磨爪，要準備貓抓板給牠？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "磨爪具有標記氣味地盤、脫落老舊指甲外殼的關鍵功能，應準備充足抓板！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "🚽",
+                  "text": "貓咪狂跑砂盆卻只拉出一顆硬便便，是便秘？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "缺乏水分與活動易造成巨結腸症便秘，需增加飲水量並由獸醫開立軟便成分！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🧪",
+                  "text": "人類的感冒藥丸，貓咪吃到會中毒致命？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓紅血球缺乏保護酵素，食入普拿疼會迅速轉變為變性血紅素，窒息肝衰竭！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "👀",
+                  "text": "扁臉貓（如加菲貓）要常擦眼角眼淚嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "短頭顱貓咪淚管容易堵塞溢淚，若不及時清潔會造成眼角細菌性皮膚炎！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🐱",
+                  "text": "貓咪臉頰上的鬍鬚太長，可以剪掉嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "鬍鬚根部布滿敏銳神經受器，具備測量空間、導航與情緒表達，絕不可剪除！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🪒",
+                  "text": "夏天很熱，可以把長毛貓的毛剃光光嗎？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🪮",
+                              "label": "不能剃光（毛防曬）",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "☀️",
+                              "label": "可以剃光最涼快",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【視情境專業評估】貓毛具備隔熱與阻擋紫外線的關鍵功能！全剃光不但無助散熱，反而極易造成曬傷、蚊蟲叮咬及心理巨大應激；除非嚴重皮膚病上藥，否則定期梳毛打薄即可！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "👂",
+                  "text": "貓耳朵有黑黑耳垢狂抓甩頭，該看醫生？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "耳疥蟲肉眼難見且傳染力極強，會造成耳朵劇癢血腫，需使用抗寄生蟲藥物！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🥣",
+                  "text": "幫貓換新牌子飼料，要花一週慢慢換？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "突然更換食物成分容易引起貓咪腸道菌相混亂，導致嘔吐與水便腹瀉！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🪶",
+                  "text": "貓尾巴大力拍打地面，代表牠很開心？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "尾巴大幅用力抽打地面通常是感到煩躁、緊張或不滿的警告訊號，應暫停互動！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "🦷",
+                  "text": "貓咪牙齒痛到甩頭流口水，要看醫生？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "齒吸收是貓常見牙科重症，牙齒被破骨細胞破壞，需照牙科X光拔牙止痛！"
+            },
+            {
+                  "year": 7,
+                  "emoji": "🔥",
+                  "text": "冬天貓咪貼著電暖器睡，容易燙傷嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓咪皮毛隔熱感遲鈍，長時間貼近發熱源容易在不知不覺中造成深層燙傷潰爛！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🍼",
+                  "text": "撿到沒斷奶的小奶貓，可以餵喝牛奶嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "專用貓代乳營養比例符合高蛋白高脂肪需求，牛奶缺乏營養且易引發腹瀉夭折！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "💦",
+                  "text": "貓咪突然在床上亂尿尿，可能是生病了？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "亂尿尿是貓咪無聲的求救訊號！常因膀胱炎疼痛或環境劇變，應先驗尿排除病因！"
+            },
+            {
+                  "year": 16,
+                  "emoji": "❤️",
+                  "text": "貓咪能活15-20年，你願意愛牠一生嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "貓咪是內斂深情的生命，你細心的守護是牠這一生最大的幸福承諾！"
+            }
+      ],
+      "rabbit": [
+            {
+                  "year": 1,
+                  "emoji": "🥕",
+                  "text": "兔子只要天天吃紅蘿蔔就會健康長大？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "迷思大破解！兔子主食80%以上必須是「無限量提摩西牧草」磨牙整腸！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🛁",
+                  "text": "兔子可以常常抓去洗泡泡浴洗水澡嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "兔子非常怕水且容易失溫受驚嚇休克！一般髒污用濕毛巾擦拭即可。"
+            },
+            {
+                  "year": 4,
+                  "emoji": "⚠️",
+                  "text": "兔兔整天不吃不喝不排便，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏥",
+                              "label": "立刻送特寵專科急診",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "😴",
+                              "label": "以為挑食不管牠",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "兔子12小時沒吃會引發致命腸胃停滯！一定要看特殊寵物專科！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "💉",
+                  "text": "公兔母兔長大後容易得腫瘤，需要結紮？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "母兔4歲後子宮腺癌機率高達80%！結紮能預防腫瘤，讓兔兔長壽陪伴！"
+            },
+            {
+                  "year": 7,
+                  "emoji": "🦶",
+                  "text": "兔子腳底沒有肉球，籠底要鋪軟墊保護？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "鐵絲籠底會壓爛兔兔腳底導致劇痛「足底炎」潰瘍！必須鋪設軟墊。"
+            },
+            {
+                  "year": 8,
+                  "emoji": "🐇",
+                  "text": "兔兔換毛季每天梳毛，預防毛球塞腸胃？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子不會嘔吐！吃下過多廢毛會堵死腸胃，勤梳毛是長壽核心功課！"
+            },
+            {
+                  "year": 10,
+                  "emoji": "🌈",
+                  "text": "老兔子跳不高，要幫牠把便盆邊緣剪低？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "體貼老毛孩關節退化，改造無障礙居家環境是優秀飼主的暖心表現！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🦶",
+                  "text": "兔子生氣害怕時，會用力跺腳發出聲音？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "「跺腳」是兔子的肢體語言，表示牠現在感到害怕、抗議或感到環境有威脅！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "💧",
+                  "text": "兔子喝水會拉肚子死掉，所以不能喝水？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "致命迷思！兔子每天都需要飲用乾淨煮沸開水，缺水會造成消化道停滯與脫水！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🦷",
+                  "text": "兔子的牙齒一輩子都在持續生長嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔牙每週都在生長，必須透過咬磨長纖維乾草自然磨損，吃軟食會導致牙刺穿刺！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "💩",
+                  "text": "兔子便便變很小顆甚至連成串，很危險？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "糞便微小或串珠狀代表腸胃蠕動減緩、有毛球堆積，應增加水分牧草並密切就醫！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🍇",
+                  "text": "兔子低頭吃自己軟軟的盲腸便，是正常的？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "這是健康的食糞生理行為！盲腸便富含維生素B群與腸道菌蛋白，不可阻止牠吃！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "👂",
+                  "text": "抓兔子時，可以直接抓牠的大耳朵提起來？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "殘酷錯誤！兔子耳朵布滿脆弱血管與軟骨，抓耳朵會引發劇痛甚至軟骨斷裂！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "☀️",
+                  "text": "夏天室溫超過28度，兔子容易中暑死掉？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子全身覆蓋濃密毛皮且汗腺不發達，夏天必須開冷氣維持20~24℃適溫防中暑！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "🎈",
+                  "text": "兔子肚子鼓脹硬硬的趴著不動，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🚑",
+                              "label": "立刻送特寵急診排氣",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🥕",
+                              "label": "餵吃紅蘿蔔看看",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "急性胃鼓脹會壓迫大血管導致休克，數小時內致命，是必須立即插管排氣的急症！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🥬",
+                  "text": "新鮮蔬菜可以當兔兔的主食吃到飽嗎？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🥗",
+                              "label": "不行，只能當小點心",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🥕",
+                              "label": "可以當主食吃到飽",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【年齡與消化系統情境】未滿半歲的幼兔腸道菌相脆弱極易水便夭折！成兔可每日給予一小碗徹底洗淨並擦乾的深色低草酸蔬菜，但80%以上的主食依然必須是無限量提摩西牧草！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🤲",
+                  "text": "抱兔子時，另一隻手一定要托住屁股嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子後腿肌肉極度強大，懸空掙扎踢腿極易造成自己腰椎骨折終身下半身癱瘓！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "😢",
+                  "text": "兔子一隻眼睛常常流眼淚，可能是牙齒問題？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "上顎臼齒牙根過長會向上生長壓迫鼻淚管，造成淚水外溢，需照牙科X光磨牙！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🏃",
+                  "text": "兔子每天都需要在安全房間跑跳放風嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "長期關籠會導致骨質疏鬆、肌肉萎縮與憂鬱咬毛，放風奔跑是身心健康基本權利！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🌱",
+                  "text": "幼兔小時候的主草，應選擇高營養苜蓿草？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "苜蓿草高鈣高蛋白適合發育期幼兔，成兔（6個月以上）則需轉換為提摩西牧草！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🤧",
+                  "text": "家裡噴濃香水或點精油，會讓兔子過敏？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子呼吸道黏膜細緻脆弱，化學芳香劑與粉塵極易誘發巴氏桿菌呼吸道感染！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🔄",
+                  "text": "兔子突然頭歪一邊、眼球狂轉，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏥",
+                              "label": "就醫檢查歪頭症",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "😴",
+                              "label": "以為賣萌不管牠",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "歪頭症常因微孢子蟲（E. cuniculi）感染或內耳中耳炎所致，早期治療治癒率較高！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🍎",
+                  "text": "蘋果香蕉糖分很高，兔子只能偶爾吃一小口？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "高糖分水果容易打亂盲腸菌相引發軟便，切記不可當作正餐餵食！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🐇",
+                  "text": "公兔和母兔關在一起，很快就會生小兔？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子是刺激性排卵動物且受孕率極高，未絕育公母同籠繁殖量會呈幾何級失控！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "✂️",
+                  "text": "幫兔子剪指甲，要避開粉紅色的血管嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "剪到指甲血管會劇痛流血，可用手電筒逆光照射辨識血管位置，備好止血粉！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "💤",
+                  "text": "兔子突然四腳朝天側倒翻過去，是生病嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "這常是極度安心放鬆時的「死豬躺（Flop）」，代表牠對周遭環境感到無比信任！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🦴",
+                  "text": "兔子的骨頭很輕脆，掙扎掉落容易骨折？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子骨骼輕脆但肌肉強健，劇烈摔落或抱姿不當掙扎極易造成致命骨折！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🌲",
+                  "text": "兔籠可以用刺激性的松木屑當墊料嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "針葉樹木屑釋放的芳香烴會損害兔子呼吸道黏膜並提高肝酵素，應選用無粉塵紙墊！"
+            },
+            {
+                  "year": 4,
+                  "emoji": "👃",
+                  "text": "兔子流濃鼻涕、前爪濕濕的，該怎麼辦？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏥",
+                              "label": "就醫治療呼吸道感染",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🤧",
+                              "label": "只是小感冒不用管",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "兔子前爪洗臉會把鼻涕抹在手上，白膿鼻涕為巴氏桿菌嚴重感染，易轉為致命肺炎！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "🦷",
+                  "text": "兔子牙齒太長沒磨平，會刺穿嘴唇流血？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "咬合不正牙齒無法自行磨損，必須由專科獸醫師定期麻醉修磨齒列！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "💃",
+                  "text": "兔子突然在半空中跳躍甩頭，代表牠超開心？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "這種空中扭動旋轉的跳躍被稱作「Binky」，是兔子表達極致興奮快樂的經典舞步！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🧪",
+                  "text": "兔子尿出橘紅色的尿，一定是血尿快死了？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "植物中的植物色素（卟啉）代謝會讓尿液呈現橙紅色，若驗尿無紅血球即屬良性！"
+            },
+            {
+                  "year": 6,
+                  "emoji": "🌿",
+                  "text": "多吃乾牧草，能幫助兔子腸胃蠕動消化？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "長纖維能刺激腸胃平滑肌蠕動推動食糜，是兔子生命運轉不可或缺的原動力！"
+            },
+            {
+                  "year": 5,
+                  "emoji": "😣",
+                  "text": "兔子縮在角落大聲磨牙，代表牠身體正劇痛？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "劇烈響亮的磨牙聲（Grinding）是兔子忍受劇痛的信號，與放鬆時微弱打呼聲截然不同！"
+            },
+            {
+                  "year": 10,
+                  "emoji": "❤️",
+                  "text": "兔子壽命長達8-12年，你願意愛牠一生嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "兔子是安靜而細膩的生命，長達十年的歲月裡，你的用心照料是牠生命的全部！"
+            }
+      ],
+      "hamster": [
+            {
+                  "year": 1,
+                  "emoji": "⚔️",
+                  "text": "兩隻倉鼠關同個籠子，牠們才不會寂寞？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "嚴格一鼠一籠！倉鼠地盤性極強，合籠飼養一定會嚴重撕咬致死！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🎡",
+                  "text": "倉鼠滾輪太小，會讓牠的脊椎受傷變形嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "滾輪直徑至少需17~21公分以上，跑步時背部平直才不會壓迫脊椎骨折！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🛁",
+                  "text": "給倉鼠洗澡應該用哪種方式？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🏖️",
+                              "label": "放專用沐浴鼠沙",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🚿",
+                              "label": "用水洗手台泡水洗",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "倉鼠絕對不能碰水洗澡，會失溫感冒猝死！請提供專用鼠沙滾沙清潔！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "❄️",
+                  "text": "冬天倉鼠摸起來冰冰不動，該如何處置？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🔥",
+                              "label": "暖暖包隔毛巾回溫",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🗑️",
+                              "label": "以為死了丟垃圾桶",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "那是失溫「偽冬眠」！及時用保暖燈與糖水能奇蹟甦醒，千萬別丟棄！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🌻",
+                  "text": "可以三餐都只餵葵瓜子當倉鼠主食嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "瓜子脂肪極高，吃多會肥胖脂肪肝與長腫瘤！應以營養均衡壓縮糧為主。"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🐹",
+                  "text": "倉鼠臉頰塞滿食物，可以用手硬擠出來嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "那是倉鼠頰囊儲藏本能！外力硬擠會刺破黏膜導致頰囊炎甚至脫垂！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "❤️",
+                  "text": "倉鼠壽命只有2-3年，所以不用看病照顧？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "生命的價值在於相伴的真心！兩年半也是牠無比珍貴的一生！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🌙",
+                  "text": "倉鼠白天在睡覺，不要敲籠子吵醒牠？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "白天熟睡時強行叫醒會引發強烈壓力荷爾蒙，大幅降低倉鼠免疫力與壽命！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "📦",
+                  "text": "倉鼠籠底要鋪厚厚一層乾淨墊料讓牠挖洞？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "倉鼠野生天性熱愛挖掘地道築巢，深厚墊料能提供無與倫比的安全感！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "☀️",
+                  "text": "夏天天氣熱，可以把倉鼠拿去曬大太陽嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "致命危險！倉鼠汗腺退化極易熱衰竭，烈日直曬半小時內便會中暑抽搐死亡！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🦷",
+                  "text": "倉鼠一直瘋狂咬籠子鐵絲，代表壓力太大？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "咬鐵絲會導致牙齒斷裂變形與鼻吻部掉毛潰瘍，應更換大底面積整理箱或壓克力籠！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "💧",
+                  "text": "小倉鼠尾巴濕濕拉肚子，是致命的急症嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "濕尾症（增生性迴腸炎）細菌感染死亡率極高，需數小時內送特寵急診補液抗生素！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "👁️",
+                  "text": "倉鼠眼睛紅腫張不開，可能是墊料粉塵過敏？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "粉塵過多的木屑會刺激結膜發炎，應就醫點眼藥水並全面更換低塵紙棉墊料！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🪵",
+                  "text": "倉鼠門牙一輩子都在長，需要磨牙啃木嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "缺乏磨牙啃木會導致門牙過長刺穿上顎與下巴，造成進食困難飢餓死亡！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🍫",
+                  "text": "巧克力、洋蔥和大蒜，倉鼠吃了會中毒致命？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "可可鹼與蔥蒜含硫化合物對小型哺乳類毒性極大，不可隨便餵食人類零食！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "🩺",
+                  "text": "倉鼠身上摸到硬硬的腫塊，要趕快看醫生？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "老年倉鼠好發乳腺瘤或皮下纖維瘤，早期發現可透過微創手術切除延長壽命！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🥊",
+                  "text": "可以把兩隻不同品種的倉鼠關在一起做伴嗎？",
+                  "type": "ox",
+                  "correctAnswer": false,
+                  "vetTip": "嚴重致命錯誤！不同品種地盤性同樣極強，合籠廝殺常導致開膛破肚殘酷致死！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "👃",
+                  "text": "倉鼠嘴巴飄出酸臭味，可能是臉頰食物發霉？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "倉鼠將易腐壞食物藏在頰囊太久會發酵化膿，需由獸醫進行生理食鹽水沖洗清創！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🏖️",
+                  "text": "太香或粉塵多的沐浴沙，會傷倉鼠呼吸道？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "化學香精與細粉塵會堵塞倉鼠微細氣管引發慢性肺炎，應挑選無香天然石英沙！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🌡️",
+                  "text": "倉鼠最舒服的溫度大約是20~24度嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "溫度低於15℃易誘發失溫偽冬眠，高於28℃易引發熱衰竭，溫控至關重要！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🚨",
+                  "text": "倉鼠翻肚四腳朝天滋滋叫，代表牠超級害怕？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "翻肚是倉鼠最後的防禦姿態，表示牠感到面臨生命威脅，應暫時退後讓牠平靜！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🎡",
+                  "text": "倉鼠滾輪最好選沒有鐵縫的，避免卡斷腳？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "鐵絲網縫隙容易在高速狂奔時夾住指甲小腿造成慘烈斷腿骨折，必須選封閉式！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🍎",
+                  "text": "餵倉鼠吃蘋果時，一定要把蘋果籽挑乾淨？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "果核內的氰苷對體重僅數十公克的倉鼠具致命劇毒，餵食果肉前務必剔除果核！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "💧",
+                  "text": "倉鼠水瓶裡的水，要每天更換乾淨的水嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "滾珠飲水頭容易滋生水垢與細菌，長期不換水會引發細菌性腸炎腹瀉！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🐹",
+                  "text": "大隻的黃金鼠，需要比三線鼠更大的滾輪？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "黃金鼠成體身長可達18公分，太小的滾輪會造成嚴重背部凹陷與脊椎骨刺！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🦅",
+                  "text": "可以從倉鼠正上方突然一把抓起牠嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "正確抓法是用雙手從底部溫柔舀起，避免從正上方投下陰影引發天敵掠食恐懼！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "👂",
+                  "text": "倉鼠狂抓耳朵掉毛脫皮，可能是感染耳疥蟲？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "環境潮濕或免疫力低下易誘發皮膚黴菌，需由獸醫師採樣顯微鏡確診用藥！"
+            },
+            {
+                  "year": 1,
+                  "emoji": "🏠",
+                  "text": "倉鼠一定要「一鼠一籠」，合養會咬死對方？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "野外倉鼠除了交配幾小時外終身獨居，關在一起必定爆發你死我活的撕咬！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "❄️",
+                  "text": "冬天好冷，可以撕乾淨紙巾給倉鼠保暖嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "紙巾保暖且透氣，切記不可用人造化纖棉花，以免纖維纏繞倉鼠手腳截肢或阻塞頰囊！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "👶",
+                  "text": "剛出生的倉鼠寶寶，如果用手亂摸會怎樣？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🚨",
+                              "label": "媽媽受驚會把小鼠吃掉",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🥰",
+                              "label": "媽媽會更開心",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "母鼠產後神經極其敏感，外來氣味會讓牠誤認寶寶遭威脅而殘忍回收吞食！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "👀",
+                  "text": "倉鼠眼睛突然凸出來腫大，要立刻送醫嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "眼球突出常因牙根感染逆行至眼窩後方形成膿瘍，需由專業醫師抗生素治療！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "✂️",
+                  "text": "倉鼠指甲太長彎曲了，需要幫牠小心修剪嗎？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "過長指甲會勾住墊料或倒插進肉球，平時提供砂質石板也能輔助自然磨耗！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🥕",
+                  "text": "新鮮水果可以天天給倉鼠吃到飽嗎？",
+                  "type": "pic",
+                  "options": [
+                        {
+                              "emoji": "🥒",
+                              "label": "不行，只能吃一小口",
+                              "isCorrect": true
+                        },
+                        {
+                              "emoji": "🥬",
+                              "label": "可以天天吃到飽",
+                              "isCorrect": false
+                        }
+                  ],
+                  "vetTip": "【嚴格控制份量情境】倉鼠體重僅數十公克，水分過高會迅速引發致命水瀉脫水！蔬果給予前務必完全擦乾水分，且份量每次僅能如小指甲蓋大，主食仍須以專用營養壓縮糧為主！"
+            },
+            {
+                  "year": 2,
+                  "emoji": "🤧",
+                  "text": "倉鼠一直發出噗噗噴氣聲又流鼻水，是生病了？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "小型鼠感冒與呼吸道肺炎惡化極快，發現打噴涕精神差應及早保暖就醫！"
+            },
+            {
+                  "year": 3,
+                  "emoji": "❤️",
+                  "text": "倉鼠壽命短短2-3年，你是牠一生的全世界？",
+                  "type": "ox",
+                  "correctAnswer": true,
+                  "vetTip": "生命無論體型大小，都值得被莊嚴以待，愛與陪伴是一生最美好的承諾！"
+            }
+      ]
+};
+
+    const Game = {
+      playerName: "",
+      petId: "dog",
+      events: [],
+      currentIndex: 0,
+      correctCount: 0,
+      wrongCount: 0,
+      hearts: 3
+    };
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen-view').forEach(s => s.classList.remove('active'));
+      const el = document.getElementById(id);
+      if (el) el.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function goToSelectScreen() {
+      SoundFX.init();
+      const input = document.getElementById('player-name-input');
+      Game.playerName = input.value.trim() || "科教館小學員";
+      showScreen('screen-select');
+    }
+
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function selectPet(petId) {
+      SoundFX.init();
+      Game.petId = petId;
+      const allQuestions = QUIZ_DATABASE[petId] || QUIZ_DATABASE.dog;
+      // 從 35 題豐富題庫中，每次遊玩隨機抽取 7 關考驗
+      Game.events = shuffleArray(allQuestions).slice(0, 7);
+      Game.currentIndex = 0;
+      Game.correctCount = 0;
+      Game.wrongCount = 0;
+      Game.hearts = 3;
+
+      const avatars = { dog: "🐕", cat: "🐈", rabbit: "🐇", hamster: "🐹" };
+      document.getElementById('ui-pet-avatar').innerText = avatars[petId];
+
+      renderQuestion();
+      showScreen('screen-game');
+    }
+
+    function adjustCardHeight() {
+      const scene = document.querySelector('.card-scene');
+      const flipper = document.getElementById('card-flipper');
+      const front = document.querySelector('.card-front');
+      const back = document.querySelector('.card-back');
+      if (!scene || !flipper || !front) return;
+
+      scene.style.minHeight = '';
+      flipper.style.minHeight = '';
+      front.style.minHeight = '';
+      if (back) back.style.minHeight = '';
+
+      const frontH = front.scrollHeight;
+      const backH = back ? back.scrollHeight : 0;
+      const isMobile = window.innerWidth <= 768;
+      const baseMin = isMobile ? 440 : 465;
+      const targetH = Math.max(baseMin, frontH, backH);
+
+      scene.style.minHeight = targetH + 'px';
+      flipper.style.minHeight = targetH + 'px';
+      front.style.minHeight = targetH + 'px';
+      if (back) back.style.minHeight = targetH + 'px';
+    }
+
+    function renderQuestion() {
+      const flipper = document.getElementById('card-flipper');
+      flipper.classList.remove('is-flipped');
+
+      const ev = Game.events[Game.currentIndex];
+      document.getElementById('ui-pet-year').innerHTML = zhuyinify(`第 ${ev.year} 年`);
+      document.getElementById('ui-q-tag').innerHTML = zhuyinify(`第 ${Game.currentIndex + 1} / ${Game.events.length} 關考驗`);
+      document.getElementById('ui-q-emoji').innerText = ev.emoji;
+      
+      const qTextEl = document.getElementById('ui-q-text');
+      qTextEl.innerHTML = zhuyinify(ev.text);
+      if (ev.text.length >= 26) {
+        qTextEl.classList.add('is-long');
+      } else {
+        qTextEl.classList.remove('is-long');
+      }
+
+      // 更新守護愛心顯示
+      renderHearts();
+
+      const wrapper = document.getElementById('ui-options-wrapper');
+      wrapper.innerHTML = "";
+
+      if (ev.type === "ox") {
+        wrapper.className = "ox-container";
+        wrapper.innerHTML = `
+          <button class="btn-ox btn-ox-correct" onclick="handleAnswer(true)">
+            <span class="ox-icon">⭕</span>
+            <span class="btn-ox-text">${zhuyinify("是的 / 做得對")}</span>
+          </button>
+          <button class="btn-ox btn-ox-wrong" onclick="handleAnswer(false)">
+            <span class="ox-icon">❌</span>
+            <span class="btn-ox-text">${zhuyinify("不對 / 不可以")}</span>
+          </button>
+        `;
+      } else if (ev.type === "pic") {
+        wrapper.className = "pic-choice-container";
+        ev.options.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.className = "btn-pic-card";
+          btn.innerHTML = `
+            <div class="pic-emoji">${opt.emoji}</div>
+            <div class="pic-label">${zhuyinify(opt.label)}</div>
+          `;
+          btn.onclick = () => handleAnswer(opt.isCorrect);
+          wrapper.appendChild(btn);
+        });
+      }
+
+      adjustCardHeight();
+    }
+
+    function renderHearts(lostIndex = -1) {
+      for (let i = 0; i < 3; i++) {
+        const heart = document.getElementById(`heart-${i}`);
+        if (!heart) continue;
+        if (i < Game.hearts) {
+          heart.className = "heart-item active";
+          heart.innerText = "❤️";
+        } else if (i === lostIndex) {
+          heart.className = "heart-item breaking";
+          heart.innerText = "❤️";
+          setTimeout(() => {
+            heart.className = "heart-item lost";
+            heart.innerText = "💔";
+          }, 850);
+        } else {
+          heart.className = "heart-item lost";
+          heart.innerText = "💔";
+        }
+      }
+    }
+
+    function triggerLossAnimation() {
+      const floatBadge = document.getElementById('ui-float-penalty');
+      if (floatBadge) {
+        floatBadge.classList.remove('show');
+        void floatBadge.offsetWidth;
+        floatBadge.classList.add('show');
+      }
+      const cardScene = document.querySelector('.card-scene');
+      if (cardScene) {
+        cardScene.classList.add('shake');
+        setTimeout(() => cardScene.classList.remove('shake'), 500);
+      }
+    }
+
+    function handleAnswer(userChoice) {
+      SoundFX.init();
+      const ev = Game.events[Game.currentIndex];
+      let isCorrect = false;
+
+      if (ev.type === "ox") {
+        isCorrect = (userChoice === ev.correctAnswer);
+      } else {
+        isCorrect = userChoice;
+      }
+
+      const resTitle = document.getElementById('ui-result-title');
+      const fatalBadgeWrap = document.getElementById('ui-fatal-badge-wrap');
+      const btnNext = document.getElementById('ui-btn-next');
+
+      if (isCorrect) {
+        Game.correctCount++;
+        SoundFX.playCorrectChime();
+        resTitle.className = "result-announcement result-correct";
+        resTitle.innerHTML = zhuyinify("✅ 答對了！太棒了！");
+        fatalBadgeWrap.innerHTML = "";
+        btnNext.innerHTML = zhuyinify("下一題 ➔");
+        btnNext.onclick = nextQuestion;
+      } else {
+        Game.wrongCount++;
+        const lostIndex = Game.hearts - 1;
+        Game.hearts = Math.max(0, Game.hearts - 1);
+        resTitle.className = "result-announcement result-wrong";
+        resTitle.innerHTML = zhuyinify("❌ 哎呀！這是不對的喔！");
+
+        if (Game.petId === 'cat') {
+          SoundFX.playCatMeow();
+        } else if (Game.petId === 'dog') {
+          SoundFX.playDogWhimper();
+        } else if (Game.petId === 'rabbit') {
+          SoundFX.playRabbitSqueak();
+        } else if (Game.petId === 'hamster') {
+          SoundFX.playHamsterSqueak();
+        }
+
+        renderHearts(lostIndex);
+        triggerLossAnimation();
+
+        if (Game.hearts <= 0) {
+          fatalBadgeWrap.innerHTML = `
+            <div class="fatal-warning-badge">
+              ${zhuyinify("🚨 警告：累積失去 3 顆守護心！毛孩生命值歸零不幸夭折！")}
+            </div>
+          `;
+          btnNext.innerHTML = zhuyinify("🚨 毛孩死亡，查看不及格證書 ➔");
+          btnNext.onclick = triggerFatalityScreen;
+        } else {
+          fatalBadgeWrap.innerHTML = `
+            <div class="fatal-warning-badge">
+              ${zhuyinify(`⚠️ 扣除 1 顆守護心！剩餘：${Game.hearts} 顆（失去 3 顆心寵物將離世）`)}
+            </div>
+          `;
+          btnNext.innerHTML = zhuyinify("記取教訓，下一題 ➔");
+          btnNext.onclick = nextQuestion;
+        }
+      }
+
+      document.getElementById('ui-vet-tip').innerHTML = zhuyinify(ev.vetTip);
+      document.getElementById('card-flipper').classList.add('is-flipped');
+      adjustCardHeight();
+    }
+
+    function nextQuestion() {
+      Game.currentIndex++;
+      if (Game.currentIndex < Game.events.length) {
+        renderQuestion();
+      } else {
+        showCertificate();
+      }
+    }
+
+    function triggerFatalityScreen() {
+      const petNames = { dog: "米克斯汪汪", cat: "虎斑喵喵", rabbit: "垂耳兔兔", hamster: "三線倉鼠" };
+      document.getElementById('ui-fatal-player').innerText = Game.playerName;
+      document.getElementById('ui-fatal-pet').innerHTML = zhuyinify(petNames[Game.petId] || "寵物夥伴");
+      showScreen('screen-fatal');
+      zhuyinifyElement(document.getElementById('screen-fatal'));
+    }
+
+    // 精準對齊愛心評級：
+    // 剩 3 心 (0 錯) -> S 級
+    // 剩 2 心 (少 1 心) -> A 級
+    // 剩 1 心 (少 2 心) -> B 級
+    function showCertificate() {
+      const petNames = { dog: "米克斯汪汪", cat: "虎斑喵喵", rabbit: "垂耳兔兔", hamster: "三線倉鼠" };
+      document.getElementById('ui-cert-player').innerText = Game.playerName;
+      document.getElementById('ui-cert-pet').innerText = petNames[Game.petId];
+
+      let grade = "S", title = "🌟 金牌典範小獸醫";
+      let advice = "太優秀了！生活改變，毛孩永遠是最好的家人！記得定期打預防針、植晶片，生病溫柔照顧，守護一生不離不棄！";
+
+      if (Game.hearts === 2) {
+        grade = "A";
+        title = "🏅 愛心優良小主人";
+        advice = "非常棒！你具備正確基礎醫學常識！未來飼養請維持定期清潔、提供充足乾淨開水，給毛孩最安全的家園！";
+      } else if (Game.hearts === 1) {
+        grade = "B";
+        title = "🌱 實習成長小主人";
+        advice = "養寵物不是只有好玩，更要準備好時間與醫療耐心！遇到困難一定要跟家人與獸醫商量，絕不能輕易放棄生命喔！";
+      }
+
+      document.getElementById('ui-cert-grade').innerText = grade;
+      document.getElementById('ui-cert-title').innerHTML = zhuyinify(title);
+      document.getElementById('ui-cert-advice').innerHTML = zhuyinify(advice);
+      document.getElementById('ui-cert-pet').innerHTML = zhuyinify(petNames[Game.petId] || "寵物夥伴");
+
+      showScreen('screen-cert');
+      zhuyinifyElement(document.getElementById('screen-cert'));
+    }
+
+    function confirmQuitToHome() {
+      if (confirm("要重新選擇動物夥伴並返回首頁嗎？")) {
+        resetToHome();
+      }
+    }
+
+    function resetToHome() {
+      showScreen('screen-welcome');
+    }
+
+    // HTML5 Canvas 實體證書 PNG 下載生成器 (高解析度)
+    function downloadCertificateImage() {
+      const canvas = document.getElementById('certCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const h = canvas.height;
+
+      // 1. 底色與法式烘焙金邊
+      ctx.fillStyle = '#fefbf3';
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.strokeStyle = '#b45309';
+      ctx.lineWidth = 10;
+      ctx.strokeRect(20, 20, w - 40, h - 40);
+
+      ctx.strokeStyle = '#fde68a';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(32, 32, w - 64, h - 64);
+
+      // 2. 標題與印鑑文字
+      ctx.textAlign = 'center';
+      
+      ctx.fillStyle = '#78350f';
+      ctx.font = 'bold 24px sans-serif';
+      ctx.fillText('國立臺灣大學獸醫學系 ✕ 國立臺灣科學教育館 聯合頒發', w / 2, 78);
+
+      ctx.fillStyle = '#451a03';
+      ctx.font = '900 42px sans-serif';
+      ctx.fillText('🏆 特派良善飼主榮譽結業證書', w / 2, 138);
+
+      ctx.strokeStyle = '#fde68a';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(100, 165);
+      ctx.lineTo(w - 100, 165);
+      ctx.stroke();
+
+      const petNames = { dog: "米克斯汪汪", cat: "虎斑喵喵", rabbit: "垂耳兔兔", hamster: "三線倉鼠" };
+      const pet = petNames[Game.petId] || "寵物夥伴";
+      const name = Game.playerName || "小學員";
+
+      ctx.fillStyle = '#292524';
+      ctx.font = 'bold 28px sans-serif';
+      ctx.fillText(`茲證明小學員 【 ${name} 】 成功通過生命守護考驗，`, w / 2, 225);
+      ctx.fillText(`以滿滿愛心承諾守護夥伴 【 ${pet} 】 一生不離不棄！`, w / 2, 270);
+
+      // 3. 等級徽章區塊
+      const grade = document.getElementById('ui-cert-grade').innerText || 'S';
+      const title = document.getElementById('ui-cert-title').innerText || '金牌典範小獸醫';
+      
+      ctx.fillStyle = '#fffbeb';
+      ctx.fillRect(w / 2 - 200, 310, 400, 120);
+      ctx.strokeStyle = '#fde68a';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(w / 2 - 200, 310, 400, 120);
+
+      ctx.fillStyle = '#b45309';
+      ctx.font = '900 52px sans-serif';
+      ctx.fillText(`等級 ${grade}`, w / 2, 365);
+
+      ctx.fillStyle = '#78350f';
+      ctx.font = 'bold 24px sans-serif';
+      ctx.fillText(title, w / 2, 405);
+
+      // 4. 衛教叮嚀小字
+      ctx.fillStyle = '#78350f';
+      ctx.font = 'bold 20px sans-serif';
+      ctx.fillText('「想養只是一時喜歡，準備好是一生的承諾」', w / 2, 475);
+      ctx.font = '18px sans-serif';
+      ctx.fillStyle = '#57534e';
+      ctx.fillText('請持續維持定期預防注射、晶片登記與細心醫療照護。', w / 2, 510);
+
+      const today = new Date().toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+      ctx.font = '18px sans-serif';
+      ctx.fillStyle = '#78716c';
+      ctx.fillText(`核發日期：${today}`, w / 2, 580);
+
+      // 紅色鋼印模擬
+      ctx.save();
+      ctx.strokeStyle = '#dc2626';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.arc(w - 180, 560, 55, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = '#dc2626';
+      ctx.font = 'bold 16px sans-serif';
+      ctx.fillText('臺大獸醫', w - 180, 555);
+      ctx.fillText('衛教合格', w - 180, 580);
+      ctx.restore();
+
+      const imageURL = canvas.toDataURL('image/png');
+      const downloadLink = document.createElement('a');
+      downloadLink.download = `守護榮譽證書_${name}.png`;
+      downloadLink.href = imageURL;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+
+    // URL 參數路由支援
+    const params = new URLSearchParams(window.location.search);
+    const viewParam = params.get('view');
+    const petParam = params.get('pet') || 'dog';
+    const qIndexParam = parseInt(params.get('q') || '0', 10);
+    const flipParam = params.get('flip') === '1';
+    const fatalParam = params.get('fatal') === '1';
+    const lossParam = params.get('loss') === '1';
+
+    if (viewParam) {
+      if (viewParam === 'screen-game') {
+        selectPet(petParam);
+        const exactQ = params.get('exact_q');
+        if (exactQ) {
+          const list = QUIZ_DATABASE[petParam] || QUIZ_DATABASE.dog;
+          const target = list.find(q => q.text.includes(exactQ));
+          if (target) {
+            Game.events = [target];
+            Game.currentIndex = 0;
+          }
+        } else {
+          Game.currentIndex = qIndexParam;
+        }
+        if (fatalParam) {
+          Game.wrongCount = 2;
+          Game.hearts = 1;
+        }
+        renderQuestion();
+        if (lossParam) {
+          handleAnswer(true);
+        } else if (flipParam) {
+          const ev = Game.events[Game.currentIndex];
+          const ansToTrigger = (ev.type === 'ox') ? ev.correctAnswer : true;
+          handleAnswer(ansToTrigger);
+        }
+      } else if (viewParam === 'screen-fatal') {
+        selectPet(petParam);
+        triggerFatalityScreen();
+      } else if (viewParam === 'screen-cert') {
+        selectPet(petParam);
+        Game.correctCount = 7;
+        showCertificate();
+      } else {
+        showScreen(viewParam);
+      }
+    }
+
+    // 初始化注音模式與全站文字
+    initZhuyinMode();
+    zhuyinifyElement(document.querySelector('.museum-header'));
+    zhuyinifyElement(document.getElementById('screen-welcome'));
+    zhuyinifyElement(document.getElementById('screen-select'));
+  </script>
+</body>
+</html>

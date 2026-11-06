@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>注音標示右側對比圖 (Standard vs Zhuyin Mode)</title>
+<style>
+  :root {
+    --color-primary: #78350f;
+    --color-primary-light: #fef3c7;
+    --color-accent: #d97706;
+    --color-border: #fde68a;
+    --color-bg: #fefbf3;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    background: #fdfaf5;
+    padding: 30px;
+    color: #1e293b;
+  }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .panel {
+    background: #ffffff;
+    border: 3px solid #fde68a;
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 10px 24px rgba(120, 53, 15, 0.08);
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #fde68a;
+  }
+  .panel-title {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .panel-badge {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 9999px;
+  }
+  .badge-std { background: #f1f5f9; color: #475569; }
+  .badge-zy { background: #fef3c7; color: #b45309; }
+
+  /* Zhuyin Components */
+  .zy-w {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: baseline;
+    margin: 0 0.8px;
+    line-height: 1;
+  }
+  .zy-c {
+    font-size: 1em;
+    font-weight: inherit;
+    line-height: 1;
+  }
+  .zy-r {
+    display: inline-grid;
+    grid-template-columns: auto 7px;
+    align-items: center;
+    margin-left: 1.5px;
+    user-select: none;
+    line-height: 1;
+  }
+  .zy-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.38em;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #b45309;
+    letter-spacing: -0.04em;
+  }
+  .zy-t {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    font-size: 0.36em;
+    font-weight: 900;
+    color: #b45309;
+    line-height: 1;
+  }
+  .zy-t .t2 { align-self: flex-start; margin-top: 1px; }
+  .zy-t .t3 { align-self: flex-end; margin-bottom: 1px; }
+  .zy-t .t4 { align-self: flex-start; margin-top: 1px; }
+  .zy-t .t5 { font-size: 0.9em; margin-bottom: -2px; line-height: 0.8; }
+
+  .q-box {
+    background: #fffdfa;
+    border: 2px solid #fef3c7;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 2.2;
+  }
+  .opt-btn {
+    border: 3px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+  }
+  .opt-btn.correct {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #15803d;
+  }
+  .opt-btn.idle {
+    background: #fafaf9;
+    color: #64748b;
+  }
+  .explain-box {
+    background: #fffbeb;
+    border: 2px dashed #f59e0b;
+    border-radius: 18px;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.1;
+    color: #78350f;
+  }
+</style>
+</head>
+<body>
+
+<div style="text-align:center; margin-bottom: 30px;">
+  <h1 style="font-size: 32px; font-weight: 900; color: #78350f; margin-bottom: 8px;">
+    🐾 專案字型呈現對比：標準模式 vs 國小兒童注音模式（右側注音）
+  </h1>
+  <p style="font-size: 16px; color: #78716c; font-weight: 600;">
+    採用臺灣教育部國小課本標準「字右直排注音」規格，保留字體可讀性並兼顧低幼兒童獨立閱讀需求
+  </p>
+</div>
+
+<div class="compare-grid">
+
+  <!-- 左邊：標準模式 (一般閱讀) -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title" style="color: #475569;">
+        🅰️ 標準模式（一般學童 / 家長）
+      </div>
+      <div class="panel-badge badge-std">無注音標註</div>
+    </div>
+
+    <div style="font-size: 13px; font-weight: 800; color: #b45309; margin-bottom: 10px;">
+      🐶 日常照護 ｜ 第 01 / 10 題
+    </div>
+
+    <div class="q-box" style="line-height: 1.6;">
+      冬天好冷，家裡的狗狗需要穿衣服嗎？
+    </div>
+
+    <div class="opt-btn correct" style="line-height: 1.5;">
+      <span style="font-size: 24px; margin-right: 12px;">👕</span>
+      <span>看品種與天氣</span>
+      <span style="margin-left: auto;">✅</span>
+    </div>
+
+    <div class="opt-btn idle" style="line-height: 1.5;">
+      <span style="font-size: 24px; margin-right: 12px;">🥶</span>
+      <span>一律不用穿</span>
+    </div>
+
+    <div class="explain-box" style="line-height: 1.6;">
+      💡 <strong>小知識</strong>：雙層毛狗狗不怕冷，短毛犬或老狗才需要穿保暖衣服。
+    </div>
+  </div>
+
+  <!-- 右邊：注音模式 (字右側注音) -->
+  <div class="panel" style="border-color: #f59e0b;">
+    <div class="panel-header" style="border-bottom-color: #f59e0b;">
+      <div class="panel-title" style="color: #b45309;">
+        🅱️ 兒童注音模式（注音標示於字右側）
+      </div>
+      <div class="panel-badge badge-zy">低年級・幼兒園適用</div>
+    </div>
+
+    <div style="font-size: 13px; font-weight: 800; color: #b45309; margin-bottom: 10px;">
+      🐶 <span class="zy-w"><span class="zy-c">日</span><span class="zy-r"><span class="zy-b"><span>ㄖ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">常</span><span class="zy-r"><span class="zy-b"><span>ㄔ</span><span>ㄤ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span><span class="zy-w"><span class="zy-c">照</span><span class="zy-r"><span class="zy-b"><span>ㄓ</span><span>ㄠ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">護</span><span class="zy-r"><span class="zy-b"><span>ㄏ</span><span>ㄨ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span> ｜ <span class="zy-w"><span class="zy-c">第</span><span class="zy-r"><span class="zy-b"><span>ㄉ</span><span>ㄧ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span> 01 / 10 <span class="zy-w"><span class="zy-c">題</span><span class="zy-r"><span class="zy-b"><span>ㄊ</span><span>ㄧ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span>
+    </div>
+
+    <div class="q-box">
+      <span class="zy-w"><span class="zy-c">冬</span><span class="zy-r"><span class="zy-b"><span>ㄉ</span><span>ㄨ</span><span>ㄥ</span></span></span></span><span class="zy-w"><span class="zy-c">天</span><span class="zy-r"><span class="zy-b"><span>ㄊ</span><span>ㄧ</span><span>ㄢ</span></span></span></span><span class="zy-w"><span class="zy-c">好</span><span class="zy-r"><span class="zy-b"><span>ㄏ</span><span>ㄠ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">冷</span><span class="zy-r"><span class="zy-b"><span>ㄌ</span><span>ㄥ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span>，<span class="zy-w"><span class="zy-c">家</span><span class="zy-r"><span class="zy-b"><span>ㄐ</span><span>ㄧ</span><span>ㄚ</span></span></span></span><span class="zy-w"><span class="zy-c">裡</span><span class="zy-r"><span class="zy-b"><span>ㄌ</span><span>ㄧ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">的</span><span class="zy-r"><span class="zy-b"><span class="zy-t t5">˙</span><span>ㄉ</span><span>ㄜ</span></span></span></span><span class="zy-w"><span class="zy-c">狗</span><span class="zy-r"><span class="zy-b"><span>ㄍ</span><span>ㄡ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">狗</span><span class="zy-r"><span class="zy-b"><span>ㄍ</span><span>ㄡ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">需</span><span class="zy-r"><span class="zy-b"><span>ㄒ</span><span>ㄩ</span></span></span></span><span class="zy-w"><span class="zy-c">要</span><span class="zy-r"><span class="zy-b"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">穿</span><span class="zy-r"><span class="zy-b"><span>ㄔ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-w"><span class="zy-c">衣</span><span class="zy-r"><span class="zy-b"><span>ㄧ</span></span></span></span><span class="zy-w"><span class="zy-c">服</span><span class="zy-r"><span class="zy-b"><span class="zy-t t5">˙</span><span>ㄈ</span><span>ㄨ</span></span></span></span><span class="zy-w"><span class="zy-c">嗎</span><span class="zy-r"><span class="zy-b"><span class="zy-t t5">˙</span><span>ㄇ</span><span>ㄚ</span></span></span></span>？
+    </div>
+
+    <div class="opt-btn correct">
+      <span style="font-size: 24px; margin-right: 12px;">👕</span>
+      <span>
+        <span class="zy-w"><span class="zy-c">看</span><span class="zy-r"><span class="zy-b"><span>ㄎ</span><span>ㄢ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">品</span><span class="zy-r"><span class="zy-b"><span>ㄆ</span><span>ㄧ</span><span>ㄣ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">種</span><span class="zy-r"><span class="zy-b"><span>ㄓ</span><span>ㄨ</span><span>ㄥ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">與</span><span class="zy-r"><span class="zy-b"><span>ㄩ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">天</span><span class="zy-r"><span class="zy-b"><span>ㄊ</span><span>ㄧ</span><span>ㄢ</span></span></span></span><span class="zy-w"><span class="zy-c">氣</span><span class="zy-r"><span class="zy-b"><span>ㄑ</span><span>ㄧ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span>
+      </span>
+      <span style="margin-left: auto;">✅</span>
+    </div>
+
+    <div class="opt-btn idle">
+      <span style="font-size: 24px; margin-right: 12px;">🥶</span>
+      <span>
+        <span class="zy-w"><span class="zy-c">一</span><span class="zy-r"><span class="zy-b"><span>ㄧ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">律</span><span class="zy-r"><span class="zy-b"><span>ㄌ</span><span>ㄩ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">不</span><span class="zy-r"><span class="zy-b"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">用</span><span class="zy-r"><span class="zy-b"><span>ㄩ</span><span>ㄥ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">穿</span><span class="zy-r"><span class="zy-b"><span>ㄔ</span><span>ㄨ</span><span>ㄢ</span></span></span></span>
+      </span>
+    </div>
+
+    <div class="explain-box">
+      💡 <strong>
+        <span class="zy-w"><span class="zy-c">小</span><span class="zy-r"><span class="zy-b"><span>ㄒ</span><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">知</span><span class="zy-r"><span class="zy-b"><span>ㄓ</span></span></span></span><span class="zy-w"><span class="zy-c">識</span><span class="zy-r"><span class="zy-b"><span>ㄕ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span>：
+      </strong>
+      <span class="zy-w"><span class="zy-c">雙</span><span class="zy-r"><span class="zy-b"><span>ㄕ</span><span>ㄨ</span><span>ㄤ</span></span></span></span><span class="zy-w"><span class="zy-c">層</span><span class="zy-r"><span class="zy-b"><span>ㄘ</span><span>ㄥ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span><span class="zy-w"><span class="zy-c">毛</span><span class="zy-r"><span class="zy-b"><span>ㄇ</span><span>ㄠ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span><span class="zy-w"><span class="zy-c">狗</span><span class="zy-r"><span class="zy-b"><span>ㄍ</span><span>ㄡ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">狗</span><span class="zy-r"><span class="zy-b"><span>ㄍ</span><span>ㄡ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">不</span><span class="zy-r"><span class="zy-b"><span>ㄅ</span><span>ㄨ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">怕</span><span class="zy-r"><span class="zy-b"><span>ㄆ</span><span>ㄚ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">冷</span><span class="zy-r"><span class="zy-b"><span>ㄌ</span><span>ㄥ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span>，<span class="zy-w"><span class="zy-c">短</span><span class="zy-r"><span class="zy-b"><span>ㄉ</span><span>ㄨ</span><span>ㄢ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">毛</span><span class="zy-r"><span class="zy-b"><span>ㄇ</span><span>ㄠ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span><span class="zy-w"><span class="zy-c">犬</span><span class="zy-r"><span class="zy-b"><span>ㄑ</span><span>ㄩ</span><span>ㄢ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">或</span><span class="zy-r"><span class="zy-b"><span>ㄏ</span><span>ㄨ</span><span>ㄛ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">老</span><span class="zy-r"><span class="zy-b"><span>ㄌ</span><span>ㄠ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">狗</span><span class="zy-r"><span class="zy-b"><span>ㄍ</span><span>ㄡ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">才</span><span class="zy-r"><span class="zy-b"><span>ㄘ</span><span>ㄞ</span></span><span class="zy-t"><span class="t2">ˊ</span></span></span></span><span class="zy-w"><span class="zy-c">需</span><span class="zy-r"><span class="zy-b"><span>ㄒ</span><span>ㄩ</span></span></span></span><span class="zy-w"><span class="zy-c">要</span><span class="zy-r"><span class="zy-b"><span>ㄧ</span><span>ㄠ</span></span><span class="zy-t"><span class="t4">ˋ</span></span></span></span><span class="zy-w"><span class="zy-c">穿</span><span class="zy-r"><span class="zy-b"><span>ㄔ</span><span>ㄨ</span><span>ㄢ</span></span></span></span><span class="zy-w"><span class="zy-c">保</span><span class="zy-r"><span class="zy-b"><span>ㄅ</span><span>ㄠ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span><span class="zy-w"><span class="zy-c">暖</span><span class="zy-r"><span class="zy-b"><span>ㄋ</span><span>ㄨ</span><span>ㄢ</span></span><span class="zy-t"><span class="t3">ˇ</span></span></span></span>。
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
